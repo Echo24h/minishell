@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/07 21:43:06 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/08 15:27:34 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ char	*builtin(t_cmd *cmd)
 void	exec_cmd(t_cmd *cmd, int *fd)
 {
 	pid_t	pid;
-	char * out;
+	char	*out;
 
+	out = NULL;
 	pid = fork();
 	if (pid == 0)
 	{

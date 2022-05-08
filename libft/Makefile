@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/09 18:17:20 by gborne            #+#    #+#              #
-#    Updated: 2022/04/15 18:52:07 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/08 15:23:52 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ endif
 PRINTF = LC_NUMERIC="en_US.UTF-8" printf
 CC = gcc -MD
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
 RM = rm -f
 HEADER = libft.h
 SRC_DIR = src
@@ -69,19 +68,13 @@ SRC_PCT = $(shell expr 100 \* $(SRC_COUNT) / $(SRC_COUNT_TOT))
 
 all: $(NAME)
 
-$(NAME): create_dirs $(OBJ) bonus additional
+$(NAME): create_dirs $(OBJ)
 	@$(PRINTF) "\r%100s\r$(GREEN)$(BIN) is up to date!$(DEFAULT)\n"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(eval SRC_COUNT = $(shell expr $(SRC_COUNT) + 1))
 	@$(PRINTF) "\r%100s\r[ %d/%d (%d%%) ] Compiling $(BLUE)$<$(DEFAULT)..." "" $(SRC_COUNT) $(SRC_COUNT_TOT) $(SRC_PCT)
 	@$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: create_dirs $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
-
-additional: create_dirs $(OBJA)
-	@$(AR) $(NAME) $(OBJA)
 
 clean:
 	@$(PRINTF) "$(CYAN)Cleaning up object files in libft...$(DEFAULT)\n"

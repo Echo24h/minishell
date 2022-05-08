@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/07 21:19:24 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/08 15:12:28 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ ifeq ($(UNAME), Linux)
 endif
 
 # Make variables
-AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror -MD -g3
 RM = rm -f
 CC = gcc

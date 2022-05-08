@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/07 21:48:34 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/08 15:26:13 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(void)
 	t_data	data;
 
 	start = 1;
+	input = NULL;
 	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
 	recover_history(history_fd);
 	while (input || start--)
