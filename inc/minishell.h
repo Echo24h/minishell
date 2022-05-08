@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/05 14:00:28 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/08 15:07:01 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
+
+test
 
 # define MINISHELL_H
 # include "../libft/inc/libft.h"
