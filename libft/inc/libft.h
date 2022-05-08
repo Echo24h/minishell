@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:17:20 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/04 15:55:04 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/08 15:58:02 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int 			ft_strcmp(const char *str1, const char *str2);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 unsigned long	ft_strlen(const char *s);
+size_t			ft_strlen2(const char *str, char c);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);
 
