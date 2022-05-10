@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/08 15:12:28 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/10 20:59:58 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,12 @@ UNAME = $(shell uname -s)
 # Properties for MacOS
 CDEBUG = #-fsanitize=address
 CHECKER = tests/checker_Mac
+
+# LEAKS = valgrind --leak-check=full --track-fds=yes --trace-children=yes -s -q
 ifeq ($(UNAME), Linux)
 	#Properties for Linux
-	LEAKS = valgrind --leak-check=full --leak-kinds=definite --track-fds=yes --trace-children=yes -s -q
+	LEAKS = valgrind --leak-check=full --show-leak-kinds=all --trace-children=yes
+	LEAKSSUPP = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=all
 endif
 
 # Make variables
@@ -89,7 +92,10 @@ test: all
 	@cd tests && ./test.sh && cd ..
 
 run: all
-	@$(LEAKS)./$(NAME)
+	$(LEAKS) ./$(NAME)
+
+runsupp: all
+	$(LEAKSSUPP) ./$(NAME)
 
 clean:
 	@$(PRINTF) "$(CYAN)Cleaning up object files in $(BIN)...$(DEFAULT)\n"

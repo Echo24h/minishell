@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/05 14:00:28 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/10 21:08:49 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_cmd
 }			t_cmd;
 
 //	main.c
-
+void	clear_data(t_data *data);
 void	recover_history(int fd);
 
 //	parser.c

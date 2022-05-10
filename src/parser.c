@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:39:24 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/05 14:23:26 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/10 21:33:11 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	get_cmds(char *input, t_data *data)
 	cmd_tab = ft_split(input, '|');
 	cmds = NULL;
 	i = -1;
-
 	while (cmd_tab[++i])
-	{
 		ft_lstadd_back(&cmds, ft_lstnew(cmd_init(cmd_tab[i])));
-	}
 	data->cmds = cmds;
 }

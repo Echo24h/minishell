@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/08 15:26:13 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/10 23:43:05 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,49 @@ void	end()
 	exit(0);
 }
 
-int	main(void)
+void	clear_data(t_data *data)
+{
+	while (data->cmds)
+	{
+		free(data->cmds->content);
+		free(data->cmds);
+		data->cmds = data->cmds->next;
+	}
+}
+
+int	main(int argc, char **argv)
 {
 	char	*input;
-	int		start;
-	int		history_fd;
 	t_data	data;
 
-	start = 1;
-	input = NULL;
-	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
-	recover_history(history_fd);
-	while (input || start--)
+	//recover_history(history_fd);
+	while (argv && argc)
 	{
 		input = readline("minishell$ ");
 		if (ft_strlen(input) > 0)
-		{
-			add_history(input);
-			ft_putendl_fd(input, history_fd);
-		}
+			//manage_history(input);
 		if (!ft_strncmp(input, "exit", 4))
 			exit(0);
-		get_cmds(input, &data);
-		free(input);
-		//print_cmds(data.cmds);
-		exec(&data);
+		if (ft_strlen(input) > 0)
+		{
+			get_cmds(input, &data);
+			free(input);
+			//print_cmds(data.cmds);
+			exec(&data);
+			clear_data(&data);
+		}
 	}
-	close(history_fd);
 	return (0);
+}
+
+/*void manage_history(char *input)
+{
+	int		history_fd;
+
+	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
+	add_history(input);
+	ft_putendl_fd(input, history_fd);
+	close(history_fd);
 }
 
 void	recover_history(int fd)
@@ -75,3 +90,4 @@ void	recover_history(int fd)
 	}
 	free(commands);
 }
+*/
