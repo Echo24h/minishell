@@ -6,25 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/10 23:42:21 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/11 13:30:53 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-
-int	is_builtin()
-{
-	return (1);
-}
-
-char	*builtin(t_cmd *cmd)
-{
-	char	*out;
-	//out = ftstrjoin(out, "Command: ");
-	out = cmd->cmd;
-	out = ft_strjoin(out, "\0");
-	return (out);
-}
 
 // Execute command and write OUT in fd[1] of pipe.
 void	exec_cmd(t_cmd *cmd, int *fd)
@@ -41,6 +27,8 @@ void	exec_cmd(t_cmd *cmd, int *fd)
 			exit(0);
 		if (is_builtin())
 			out = builtin(cmd);
+		else
+			out = bin(cmd);
 		write(fd[1], out, ft_strlen(out) + 1);
 		close(fd[1]);
 		free(out);

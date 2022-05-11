@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/10 20:59:58 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/11 12:59:08 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,9 +92,12 @@ test: all
 	@cd tests && ./test.sh && cd ..
 
 run: all
+	./$(NAME)
+
+leaks: all
 	$(LEAKS) ./$(NAME)
 
-runsupp: all
+leakssupp: all
 	$(LEAKSSUPP) ./$(NAME)
 
 clean:
