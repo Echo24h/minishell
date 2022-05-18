@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/18 16:15:06 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 16:22:34 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	exec(t_data *data, char **envp)
 	int		fd[2];
 	char	buff[4096];
 	char	*out;
+	int		i;
 
 	out = NULL;
 
@@ -75,12 +76,13 @@ int	exec(t_data *data, char **envp)
 		data->cmds = data->cmds->next;
 		close(fd[0]);
 		close(fd[1]);
-
+		i = -1;
+		while (buff[++i])
+			buff[i] = 0;
 	}
 	if (out)
 	{
 		write(1, out, ft_strlen(out));
-		write(1, "\n", 2);
 		free(out);
 	}
 	return (0);
