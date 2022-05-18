@@ -6,18 +6,39 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/18 16:22:34 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 19:30:45 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
+char	**add_out(char **arg, char *out)
+{
+	int		i;
+	char	**new;
+
+	i = -1;
+	while(arg[++i])
+		;
+	new = malloc(sizeof(char *) * (i + 1));
+	i = -1;
+	while (arg[++i])
+	{
+		new[i] = arg[i];
+		free(arg[i]);
+	}
+	new[i] = out;
+	return (new);
+}
+
 // Execute command and write OUT in fd[1] of pipe.
-void	exec_cmd(t_cmd *cmd, int *fd, char **envp)
+void	exec_cmd(t_cmd *cmd, int *fd, char **envp, char *out)
 {
 	pid_t	pid;
 	pid = fork();
 
+	if (out)
+		cmd->arg = add_out(cmd->arg, out);
 	if (pid == 0)
 	{
 		close(fd[0]);
@@ -68,7 +89,7 @@ int	exec(t_data *data, char **envp)
 	while (data->cmds)
 	{
 		pipe(fd);
-		exec_cmd(data->cmds->content, fd, envp);
+		exec_cmd(data->cmds->content, fd, envp, out);
 		read(fd[0], &buff, 4096);
 		if (out)
 			free(out);

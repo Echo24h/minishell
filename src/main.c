@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/18 16:37:18 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 19:21:40 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	clear_data(t_data *data)
 		data->cmds = data->cmds->next;
 	}
 }
-#define CYELLOW "\001\e[1;32m\002"
-#define RESET   "\001\e[0m\002"
 
 int	main(int argc, char **argv, char **envp)
 {

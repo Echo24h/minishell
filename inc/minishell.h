@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/18 15:42:38 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 19:21:54 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
+# define CYELLOW "\001\e[1;32m\002"
+# define RESET   "\001\e[0m\002"
 
 typedef struct s_data
 {
