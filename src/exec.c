@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/18 15:43:18 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 16:15:06 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ char	*get_out(char *buff)
 	char	*out;
 
 	i = 0;
-	while (buff[i] != '\0')
+	while (buff[i])
 		i++;
-	out = malloc(i + 1);
+	if (i > 0)
+		out = malloc(i + 1);
 	i = 0;
-	while(buff[i] != '\0')
+	while(buff[i])
 	{
 		out[i] = buff[i];
 		i++;

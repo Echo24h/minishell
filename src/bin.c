@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/18 15:53:26 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 16:03:21 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	bin(t_cmd *cmd)
 	ft_strlcpy(path, "/usr/bin/", 10);
 	path = ft_strjoin(path, cmd->cmd);
 	if (execve(path, cmd->arg, cmd->envp) == -1)
-		write(1, "Error bin.c", 12);
+		write(1, "Error bin.c file not found", 27);
 }
