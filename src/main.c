@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/10 23:43:05 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:51:06 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,31 @@ void	end()
 	exit(0);
 }
 
+void	clear_cmd(t_cmd *cmd)
+{
+	int	i;
+
+	i = -1;
+	while (cmd->arg[++i])
+		free(cmd->arg);
+	free(cmd->cmd);
+}
+
 void	clear_data(t_data *data)
 {
 	while (data->cmds)
 	{
+		clear_cmd(data->cmds->content);
 		free(data->cmds->content);
 		free(data->cmds);
 		data->cmds = data->cmds->next;
 	}
 }
 
-int	main(int argc, char **argv)
+#define CYELLOW "\001\e[0;32m\002"
+#define RESET   "\001\e[0m\002"
+
+int	main(int argc, char **argv, char **envp)
 {
 	char	*input;
 	t_data	data;
@@ -37,7 +51,7 @@ int	main(int argc, char **argv)
 	//recover_history(history_fd);
 	while (argv && argc)
 	{
-		input = readline("minishell$ ");
+		input = readline(CYELLOW "minishell$ " RESET);
 		if (ft_strlen(input) > 0)
 			//manage_history(input);
 		if (!ft_strncmp(input, "exit", 4))
@@ -47,7 +61,7 @@ int	main(int argc, char **argv)
 			get_cmds(input, &data);
 			free(input);
 			//print_cmds(data.cmds);
-			exec(&data);
+			exec(&data, envp);
 			clear_data(&data);
 		}
 	}

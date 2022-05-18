@@ -6,13 +6,14 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/11 13:29:07 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:21:58 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	echo(char *str)
+void	echo(t_cmd *cmd)
 {
-	write(1, str, ft_strlen(str));
+	if (ft_strlen(cmd->arg[1]))
+		write(1, cmd->arg[1], ft_strlen(cmd->arg[1]) + 1);
 }

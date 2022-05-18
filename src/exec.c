@@ -6,32 +6,29 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/11 13:30:53 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:43:18 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
 // Execute command and write OUT in fd[1] of pipe.
-void	exec_cmd(t_cmd *cmd, int *fd)
+void	exec_cmd(t_cmd *cmd, int *fd, char **envp)
 {
 	pid_t	pid;
-	char	*out;
-	out = NULL;
 	pid = fork();
 
 	if (pid == 0)
 	{
 		close(fd[0]);
+		dup2(fd[1], 1);
 		if (cmd->cmd == NULL)
 			exit(0);
-		if (is_builtin())
-			out = builtin(cmd);
+		cmd->envp = envp;
+		if (is_builtin(cmd))
+			builtin(cmd);
 		else
-			out = bin(cmd);
-		write(fd[1], out, ft_strlen(out) + 1);
-		close(fd[1]);
-		free(out);
+			bin(cmd);
 		exit(0);
 	}
 }
@@ -51,11 +48,14 @@ char	*get_out(char *buff)
 		out[i] = buff[i];
 		i++;
 	}
-	out[i] = '\0';
+	if (i > 0)
+		out[i] = '\0';
+	else
+		return NULL;
 	return out;
 }
 
-int	exec(t_data *data)
+int	exec(t_data *data, char **envp)
 {
 	int		fd[2];
 	char	buff[4096];
@@ -66,15 +66,21 @@ int	exec(t_data *data)
 	while (data->cmds)
 	{
 		pipe(fd);
-		exec_cmd(data->cmds->content, fd);
+		exec_cmd(data->cmds->content, fd, envp);
 		read(fd[0], &buff, 4096);
+		if (out)
+			free(out);
 		out = get_out(buff);
-		write(1, out, ft_strlen(out));
-		write(1, "\n", 2);
 		data->cmds = data->cmds->next;
 		close(fd[0]);
 		close(fd[1]);
+
 	}
-	free(out);
+	if (out)
+	{
+		write(1, out, ft_strlen(out));
+		write(1, "\n", 2);
+		free(out);
+	}
 	return (0);
 }

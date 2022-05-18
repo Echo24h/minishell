@@ -6,13 +6,19 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/11 13:31:18 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:53:26 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	bin(char *str)
+void	bin(t_cmd *cmd)
 {
-	write(1, str, ft_strlen(str));
+	char	*path;
+
+	path = malloc(sizeof(char) * 10);
+	ft_strlcpy(path, "/usr/bin/", 10);
+	path = ft_strjoin(path, cmd->cmd);
+	if (execve(path, cmd->arg, cmd->envp) == -1)
+		write(1, "Error bin.c", 12);
 }

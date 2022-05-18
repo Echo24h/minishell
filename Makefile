@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/11 12:59:08 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/15 11:54:51 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,10 @@ SRC			=	main.c \
 				parser.c \
 				signals.c \
 				utils.c \
-				print.c exec.c
+				print.c exec.c \
+				bin.c builtin.c \
+				echo.c
+
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
