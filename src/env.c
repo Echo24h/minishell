@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 18:36:34 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/27 19:12:55 by gborne           ###   ########.fr       */
+/*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
+/*   Updated: 2022/05/27 20:43:19 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "../inc/minishell.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	env(t_cmd *cmd, int *fd)
 {
-	t_list	*curr;
-	t_list	*next;
+	int		i;
+	char	*str;
 
-	curr = *lst;
-	while (curr)
+	i = -1;
+	str = ft_calloc(1, sizeof(char));
+	while (cmd->envp[++i])
 	{
-		next = curr->next;
-		ft_lstdelone(curr, del);
-		curr = next;
+		str = ft_strjoin(str, cmd->envp[i]);
+		str = ft_strjoin(str, "\n");
 	}
-	*lst = NULL;
+	write(fd[1], str, ft_strlen(str));
+	free(str);
 }

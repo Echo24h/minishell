@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/15 11:54:51 by gborne           ###   ########.fr        #
+#    Updated: 2022/05/27 20:59:24 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ CHECKER = tests/checker_Mac
 # LEAKS = valgrind --leak-check=full --track-fds=yes --trace-children=yes -s -q
 ifeq ($(UNAME), Linux)
 	#Properties for Linux
-	LEAKS = valgrind --leak-check=full --show-leak-kinds=all --trace-children=yes
-	LEAKSSUPP = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=all
+	LEAKS = valgrind --leak-check=full --show-leak-kinds=definite --trace-children=yes
+	LEAKSSUPP = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=definite
 endif
 
 # Make variables
@@ -52,10 +52,9 @@ SRC			=	main.c \
 				parser.c \
 				signals.c \
 				utils.c \
-				print.c exec.c \
+				debug.c exec.c \
 				bin.c builtin.c \
-				echo.c
-
+				echo.c env.c pwd.c
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 

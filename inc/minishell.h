@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/18 19:21:54 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/27 20:52:02 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_cmd
 	char	*cmd;
 	char	**arg;
 	char	**envp;
+
+	t_data	*data;
 }			t_cmd;
 
 //	main.c
@@ -47,12 +49,7 @@ void	recover_history(int fd);
 
 //	parser.c
 
-/**
- * @brief Generate a command table while parsing the command line (cmd_line)
- *
- * @param input 	command line to parse
- * @return s_cmd* 	generated command table
- */
+// Parse l'input et construit une liste de commande.
 void	get_cmds(char *input, t_data *data);
 
 //	signals.c
@@ -67,7 +64,7 @@ void	free_tab(char **tab);
 // print.c
 
 // Affiche la liste de commandes (temporaire pour débug)
-void	print_cmds(t_list *cmds);
+void 	print_cmd(t_cmd *cmd);
 
 // exec.c
 
@@ -82,10 +79,14 @@ void	bin(t_cmd *cmd);
 // builtin.c
 
 int		is_builtin(t_cmd *cmd);
+
 // Execute buitin command
-int		builtin(t_cmd *cmd);
+int		builtin(t_cmd *cmd, int *fd);
 
 // Builtin
-void	echo(t_cmd *cmd);
+void	echo(t_cmd *cmd, int *fd);
+void	env(t_cmd *cmd, int *fd);
+void	pwd(t_cmd *cmd, int *fd);
+
 
 #endif

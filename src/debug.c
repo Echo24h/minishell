@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 18:36:34 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/27 19:12:55 by gborne           ###   ########.fr       */
+/*   Created: 2022/04/09 19:15:36 by gborne            #+#    #+#             */
+/*   Updated: 2022/05/27 19:15:32 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "../inc/minishell.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void print_cmd(t_cmd *cmd)
 {
-	t_list	*curr;
-	t_list	*next;
-
-	curr = *lst;
-	while (curr)
+	int	i;
+	write(1, "----\n", 6);
+	write(1, "cmd->cmd : ", 12);
+	write(1, cmd->cmd, ft_strlen(cmd->cmd));
+	write(1, "\n", 2);
+	write(1, "cmd->arg : ", 12);
+	i = 0;
+	while (cmd->arg[i])
 	{
-		next = curr->next;
-		ft_lstdelone(curr, del);
-		curr = next;
+		ft_putnbr(i);
+		write(1, cmd->arg[i], ft_strlen(cmd->arg[i]));
+		write(1, "-", 2);
+		i++;
 	}
-	*lst = NULL;
+	write(1, "\n", 2);
+	write(1, "----\n", 6);
 }

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/18 19:21:40 by gborne           ###   ########.fr       */
+/*   Updated: 2022/05/27 19:12:58 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,19 @@ void	end()
 	exit(0);
 }
 
-void	clear_cmd(t_cmd *cmd)
+void	clear_cmd(void *content)
 {
-	int	i;
+	t_cmd	*cmd;
 
-	i = -1;
-	while (cmd->arg[++i])
-		free(cmd->arg);
+	cmd = (t_cmd *)content;
 	free(cmd->cmd);
+	free_tab(cmd->arg);
 }
 
 void	clear_data(t_data *data)
 {
-	while (data->cmds)
-	{
-		clear_cmd(data->cmds->content);
-		free(data->cmds->content);
-		free(data->cmds);
-		data->cmds = data->cmds->next;
-	}
+	ft_lstclear(&data->cmds, &clear_cmd);
+	free(data->cmds);
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -52,7 +46,11 @@ int	main(int argc, char **argv, char **envp)
 		if (ft_strlen(input) > 0)
 			//manage_history(input);
 		if (!ft_strncmp(input, "exit", 4))
+		{
+			clear_data(&data);
 			exit(0);
+		}
+
 		if (ft_strlen(input) > 0)
 		{
 			get_cmds(input, &data);
