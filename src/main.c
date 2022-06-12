@@ -6,7 +6,7 @@
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 20:23:50 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:44:23 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ int	main(int argc __unused, char **arg __unused, char **envp)
 	while (1)
 	{
 		input = readline(CYELLOW "minishell$ " RESET);
-		if (ft_strlen(input))
-			manage_history(input);
-		if (!ft_strncmp(input, "exit", 5))
-			quit(input, 1, 0);
-		if (ft_strlen(input) > 0)
+		if (!input)
+			quit("exit", 0, 0);
+		else if (ft_strlen(input))
 		{
+			manage_history(input);
+			if (!ft_strncmp(input, "exit", 5))
+				quit(input, 0, 1);
 			get_cmds(input, &data);
 			exec(&data, envp);
 			clear_data(&data);
