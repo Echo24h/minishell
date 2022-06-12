@@ -6,7 +6,7 @@
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 19:15:19 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:23:50 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,22 @@ void	clear_data(t_data *data)
 	free(data->cmds);
 }
 
-int	main(int argc, char **argv, char **envp)
+int	main(int argc __unused, char **arg __unused, char **envp)
 {
 	char	*input;
 	t_data	data;
 
 	manage_history(NULL);
-	while (argv && argc)
+	while (1)
 	{
 		input = readline(CYELLOW "minishell$ " RESET);
-		if (ft_strlen(input) > 0)
+		if (ft_strlen(input))
 			manage_history(input);
 		if (!ft_strncmp(input, "exit", 5))
-			quit("exit\n", 0, 0);
+			quit(input, 1, 0);
 		if (ft_strlen(input) > 0)
 		{
 			get_cmds(input, &data);
-			free(input);
-			//print_cmds(data.cmds);
 			exec(&data, envp);
 			clear_data(&data);
 		}
@@ -57,7 +55,7 @@ void	quit(char *error_message, int error_code, int clean)
 	if (clean >= 2)
 		;
 	if (error_message)
-		ft_putstr_fd(error_message, 1);
+		ft_putendl_fd(error_message, 1);
 	if (clean == 1)
 		free(error_message);
 	exit(error_code);

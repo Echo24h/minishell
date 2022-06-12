@@ -6,7 +6,7 @@
 #    By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/06/12 19:48:24 by mbastard         ###   ########.fr        #
+#    Updated: 2022/06/12 20:24:14 by mbastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,7 +125,7 @@ re: fclean
 	@make all
 
 git:
-	git add .
+	git add *
 	git commit
 	git push
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:39:24 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/27 19:14:25 by gborne           ###   ########.fr       */
+/*   Updated: 2022/06/12 20:23:46 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	get_cmds(char *input, t_data *data)
 	while (cmd_tab[++i])
 		ft_lstadd_back(&cmds, ft_lstnew(cmd_init(cmd_tab[i], data)));
 	free_tab(cmd_tab);
+	free(input);
 	data->cmds = cmds;
 }
