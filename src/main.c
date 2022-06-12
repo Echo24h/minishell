@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/05/27 19:12:58 by gborne           ###   ########.fr       */
+/*   Updated: 2022/06/12 17:19:19 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	end()
 	exit(0);
 }
 
-void	clear_cmd(void *content)
+static void	clear_cmd(void *content)
 {
 	t_cmd	*cmd;
 
@@ -50,7 +50,6 @@ int	main(int argc, char **argv, char **envp)
 			clear_data(&data);
 			exit(0);
 		}
-
 		if (ft_strlen(input) > 0)
 		{
 			get_cmds(input, &data);
