@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_subdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 18:17:20 by gborne            #+#    #+#             */
-/*   Updated: 2022/06/12 19:10:37 by mbastard         ###   ########.fr       */
+/*   Created: 2022/06/12 19:24:45 by mbastard          #+#    #+#             */
+/*   Updated: 2022/06/12 19:26:05 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-unsigned long	ft_strlen(const char *s)
+char	*ft_subdup(const char *s1, char c)
 {
-	int	i;
+	char		*s2;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	s2 = (char *)ft_calloc(ft_sublen(s1, c) + 1, sizeof(char));
+	if (!s2)
+		return (NULL);
+	ft_strlcpy(s2, s1, ft_sublen(s1, c) + 1);
+	return (s2);
 }

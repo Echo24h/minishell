@@ -6,7 +6,7 @@
 #    By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/06/12 17:25:43 by mbastard         ###   ########.fr        #
+#    Updated: 2022/06/12 19:48:24 by mbastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ CC = gcc
 PRINTF = LC_NUMERIC="en_US.UTF-8" printf
 SRC_DIR = src
 OBJ_DIR = obj
-BIN_DIR = bin
 TMP_DIR = tmp
+BIN_DIR = bin
 LIBFT = libft/bin/libft.a
 BIN = minishell
 NAME = $(BIN_DIR)/$(BIN)
@@ -84,8 +84,8 @@ compile_libft:
 
 create_dirs:
 	@mkdir -p $(OBJ_DIR)
-	@mkdir -p $(BIN_DIR)
 	@mkdir -p $(TMP_DIR)
+	@mkdir -p $(BIN_DIR)
 
 compare: all
 	@cd tests && ./compare.sh && cd ..
@@ -107,11 +107,11 @@ clean:
 	@if [ -d "libft" ]; then \
 		make clean -C libft/; \
 	fi
-	@$(RM) -r $(OBJ_DIR)
-	@$(RM) -r $(TMP_DIR)
+	@$(RM) -rf $(OBJ_DIR)
 
 fclean: clean
-	@$(RM) -r $(BIN_DIR)
+	@$(RM) -rf $(BIN_DIR)
+	@$(RM) -rf $(TMP_DIR)
 	@$(PRINTF) "$(CYAN)Removed $(BIN)$(DEFAULT)\n"
 
 norminette:

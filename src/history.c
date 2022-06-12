@@ -6,45 +6,56 @@
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 13:15:51 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 13:16:17 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/06/12 20:01:44 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void manage_history(char *input)
+/**
+ * @brief recover history from the history file
+ * 
+ * @param fd history file descriptor
+ */
+static void	recover_history(int fd)
 {
-	int		history_fd;
-
-	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
-	add_history(input);
-	ft_putendl_fd(input, history_fd);
-	close(history_fd);
+	size_t	i;
+	char	*cmd;
+	char	*cmds;
+    
+	i = -1;
+	cmds = NULL;
+	cmd = get_next_line(fd);
+	if (cmd)
+	{
+		cmds = ft_strjoin2(cmds, cmd, 1, 1);
+		while (cmd)
+		{
+			cmd = get_next_line(fd);
+			cmds = ft_strjoin2(cmds, cmd, 1, 1);
+		}
+		while (++i < ft_strlen(cmds))
+		{
+			cmd = ft_subdup(&cmds[i], '\n');
+			i += ft_sublen(&cmds[i], '\n');
+			add_history(cmd);
+			free(cmd);
+		}
+		free(cmds);
+	}
 }
 
-void	recover_history(int fd)
+void	manage_history(char *cmd)
 {
-	int		i;
-	size_t	len;
-	char	*commands;
-	char	**history;
+	int			history_fd;
 
-	i = -1;
-	len = 0;
-	commands = get_next_line(fd);
-	if (commands)
+	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
+	if (!cmd)
+		recover_history(history_fd);
+	else
 	{
-		while (len != ft_strlen(commands))
-		{
-			len = ft_strlen(commands);
-			commands = ft_strjoin(commands, get_next_line(fd));
-		}
-		write(1, "test\n", 5);
-		history = ft_split(commands, '\n');
-		if (history)
-			while (history[++i])
-				add_history(history[i]);
-		free_tab(history);
+		add_history(cmd);
+		ft_putendl_fd(cmd, history_fd);
 	}
-	free(commands);
+	close(history_fd);
 }

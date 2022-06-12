@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 17:36:40 by gborne           ###   ########.fr       */
+/*   Updated: 2022/06/12 19:15:19 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	main(int argc, char **argv, char **envp)
 	char	*input;
 	t_data	data;
 
-	//recover_history(history_fd);
+	manage_history(NULL);
 	while (argv && argc)
 	{
 		input = readline(CYELLOW "minishell$ " RESET);
-		// if (ft_strlen(input) > 0)
-			//manage_history(input);
+		if (ft_strlen(input) > 0)
+			manage_history(input);
 		if (!ft_strncmp(input, "exit", 5))
 			quit("exit\n", 0, 0);
 		if (ft_strlen(input) > 0)

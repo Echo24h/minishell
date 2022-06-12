@@ -6,7 +6,7 @@
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 13:23:30 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:44:16 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,25 @@ typedef struct s_cmd
 //		main.c functions
 
 void	clear_data(t_data *data);
-void	recover_history(int fd);
 void	quit(char *error_message, int error_code, int clean);
 
-//	parser.c
+//		history.c functions
 
-// Parse l'input et construit une liste de commande.
+/**
+ * @brief manage history and add (input) to the history file 
+ * 
+ * @param cmd command to add
+ */
+void	manage_history(char *cmd);
+
+//		parser.c functions
+
+/**
+ * @brief Parse the (input) and build the command list in (data)
+ * 
+ * @param input input to parse
+ * @param data 	data to build the command list in
+ */
 void	get_cmds(char *input, t_data *data);
 
 //	signals.c
