@@ -6,13 +6,13 @@
 /*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:54:40 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 13:33:13 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:29:28 by mbastard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	clear_cmd(void *content)
+static void	clear_cmd(void *content)
 {
 	t_cmd	*cmd;
 
