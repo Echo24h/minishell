@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
+#    By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/05/27 20:59:24 by gborne           ###   ########.fr        #
+#    Updated: 2022/06/12 17:25:43 by mbastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRC			=	main.c \
 				utils.c \
 				debug.c exec.c \
 				bin.c builtin.c \
-				echo.c env.c pwd.c
+				echo.c env.c pwd.c history.c
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
