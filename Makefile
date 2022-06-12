@@ -6,7 +6,7 @@
 #    By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/06/12 20:24:14 by mbastard         ###   ########.fr        #
+#    Updated: 2022/06/12 20:25:24 by mbastard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,7 +126,7 @@ re: fclean
 
 git:
 	git add *
-	git commit
+	git commit -m "make git"
 	git push
 
 -include $(OBJ_DIR)/*.d
