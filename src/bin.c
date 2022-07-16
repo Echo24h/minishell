@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/16 20:33:24 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/16 20:36:49 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	bin(t_cmd *cmd)
 			execve(path, cmd->arg, cmd->envp);
 		}
 		write(1, "Error bin.c file not found\n", 28);
+		free_tab(path_list);
 	}
-	free_tab(path_list);
 }
