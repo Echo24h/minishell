@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+         #
+#    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/17 17:10:18 by dalves-p          #+#    #+#              #
-#    Updated: 2022/06/12 20:25:24 by mbastard         ###   ########.fr        #
+#    Created: 2022/07/17 02:51:50 by gborne            #+#    #+#              #
+#    Updated: 2022/07/18 00:24:46 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ ifeq ($(UNAME), Linux)
 endif
 
 # Make variables
-CFLAGS = -Wall -Wextra -Werror -MD -g3
+CFLAGS = -Wall -Wextra -Werror -MD -g3 -g
 RM = rm -f
 CC = gcc
 PRINTF = LC_NUMERIC="en_US.UTF-8" printf

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 18:39:24 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 20:23:46 by mbastard         ###   ########.fr       */
+/*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/18 04:31:51 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ static char	**get_arg(char *cmd_line)
 	char			**arg;
 
 	arg = ft_split(cmd_line, ' ');
+	/*int i = -1;
+	printf("cmd_line=%s\n", cmd_line);
+	while (arg[++i])
+	{
+		printf("arg[%d]=%s-\n", i, arg[i]);
+		printf("arg[%d]=%s-\n", i, arg[1]);
+	}
+	exit(0);*/
 	return (arg);
 }
 
@@ -26,12 +34,15 @@ static char	*get_cmd(char *cmd_line)
 	unsigned int	start;
 	size_t			len;
 
+	cmd = NULL;
 	start = 0;
-	if (cmd_line[0] == ' ')
+	while(cmd_line[start] == ' ')
 		start++;
 	len = start;
 	while(cmd_line[len] != ' ' && cmd_line[len])
 		len++;
+	if (cmd_line[len] == ' ')
+		cmd_line[len] = '\0';
 	cmd = ft_substr(cmd_line, start, len);
 	return (cmd);
 }
@@ -40,9 +51,10 @@ static void	*cmd_init(char *cmd_line, t_data *data)
 {
 	t_cmd	*cmd;
 
+	//printf("cmd_line=%s\n", cmd_line);
 	cmd = malloc(sizeof(t_cmd));
-	cmd->cmd = get_cmd(cmd_line);
 	cmd->arg = get_arg(cmd_line);
+	cmd->cmd = get_cmd(cmd_line);
 	cmd->data = data;
 	//free(cmd_line);
 	//print_cmd(cmd);

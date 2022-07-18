@@ -6,103 +6,65 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/06/12 17:23:14 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/18 04:34:33 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-char	**add_out(char **arg, char *out)
-{
-	int		i;
-	char	**new;
-
-	i = -1;
-	while(arg[++i])
-		;
-	new = malloc(sizeof(char *) * (i + 1));
-	i = -1;
-	while (arg[++i])
-	{
-		new[i] = arg[i];
-		free(arg[i]);
-	}
-	new[i] = out;
-	return (new);
-}
-
 // Execute command and write OUT in fd[1] of pipe.
-void	exec_cmd(t_cmd *cmd, int *fd, char **envp, char *out)
+void	exec_cmd(t_cmd *cmd, char **envp)
 {
-	pid_t	pid;
-
 	cmd->envp = envp;
-
 	if (ft_strnstr("echo env pwd cd", cmd->cmd, 16))
-	{
-		builtin(cmd, fd);
-	}
+		builtin(cmd);
 	else
 	{
-		pid = fork();
-		if (out)
-			cmd->arg = add_out(cmd->arg, out);
-		if (pid == 0)
-		{
-			close(fd[0]);
-			dup2(fd[1], 1);
-			if (cmd->cmd == NULL)
-				exit(0);
-			bin(cmd);
-			clear_data(cmd->data);
+		if (cmd->cmd == NULL)
 			exit(0);
-		}
+		bin(cmd);
 	}
-}
-
-char	*get_out(char *buff)
-{
-	int		i;
-	char	*out;
-
-	i = 0;
-	out = NULL;
-	while (buff[i])
-		i++;
-	if (i > 0)
-	{
-		out = ft_calloc(i + 1, sizeof(char));
-		i = -1;
-		while(buff[++i])
-			out[i] = buff[i];
-	}
-	return out;
 }
 
 int	exec(t_data *data, char **envp)
 {
+	pid_t	pid;
 	int		fd[2];
-	char	buff[4096];
-	char	*out;
+	int		fd_tmp;
+	int		i;
 
-	out = NULL;
+	i = 0;
+	fd_tmp = dup(0);
 	while (data->cmds)
 	{
-		ft_bzero(buff, 4096);
 		pipe(fd);
-		exec_cmd(data->cmds->content, fd, envp, out);
-		read(fd[0], &buff, 4096);
-		if (out)
-			free(out);
-		out = get_out(buff);
+		pid = fork();
+		if (pid == 0)
+		{	
+			close(fd[0]);
+			dup2(fd_tmp, 0);
+			close(fd_tmp);
+			if (data->cmds->next)
+				dup2(fd[1], 1);
+			close(fd[1]);
+			exec_cmd(data->cmds->content, envp);
+			exit(0);
+		}
+		else
+		{
+			close(fd[1]);
+			if (data->cmds->next)
+			{
+				close(fd_tmp);
+				fd_tmp = dup(fd[0]);
+			}
+			close(fd[0]);
+		}
 		data->cmds = data->cmds->next;
-		close(fd[0]);
-		close(fd[1]);
+		i++;
 	}
-	if (out)
-	{
-		write(1, out, ft_strlen(out));
-		free(out);
-	}
+	close(fd_tmp);
+	while (waitpid(-1, 0, 0) > 0)
+				;
 	return (0);
 }

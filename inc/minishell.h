@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 19:44:16 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/07/16 23:26:55 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,12 @@ void	bin(t_cmd *cmd);
 int		is_builtin(t_cmd *cmd);
 
 // Execute buitin command
-int		builtin(t_cmd *cmd, int *fd);
+int		builtin(t_cmd *cmd);
 
 // Builtin
-void	echo(t_cmd *cmd, int *fd);
-void	env(t_cmd *cmd, int *fd);
-void	pwd(t_cmd *cmd, int *fd);
+void	echo(t_cmd *cmd);
+void	env(t_cmd *cmd);
+void	pwd(t_cmd *cmd);
 
 
 #endif
