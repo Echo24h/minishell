@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/21 05:04:40 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 05:42:05 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	manage_history(char *cmd);
 // Parse the (input) and build the command list in (data)
 void	get_cmds(char *input, t_data *data);
 // Read the cmd line and thransform them for the parsing
-char	*lexique(const char *cmd_line);
+char	*lexique(t_data *data, const char *cmd_line);
 
 //	signals.c
 

@@ -1,5 +1,13 @@
-;s
-ls
-exit
-ls | exit
-exit | ls
+echo $PATH
+echo $PAT
+echo $PATH=
+echo $PATH
+echo $PATH=
+echo $PATH==
+echo $PATH
+echo $PATH=
+echo $PATH==
+echo $PATH
+echo $PATH=
+echo $PATH=10
+echo $PATH

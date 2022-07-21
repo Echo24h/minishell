@@ -6,18 +6,18 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 04:55:40 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 05:33:03 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-static char	**get_arg(char *cmd_line)
+static char	**get_arg(t_data *data, char *cmd_line)
 {
 	char			**arg;
 	char			*line;
 
-	line = lexique(cmd_line);
+	line = lexique(data, cmd_line);
 	arg = ft_split(line, ' ');
 	/*int i = -1;
 	printf("cmd_line=%s\n", cmd_line);
@@ -55,7 +55,7 @@ static void	*cmd_init(char *cmd_line, t_data *data)
 
 	//printf("cmd_line=%s\n", cmd_line);
 	cmd = malloc(sizeof(t_cmd));
-	cmd->arg = get_arg(cmd_line);
+	cmd->arg = get_arg(data, cmd_line);
 	cmd->cmd = get_cmd(cmd_line);
 	cmd->data = data;
 	//free(cmd_line);
