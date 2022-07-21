@@ -14,13 +14,17 @@
 
 int	builtin(t_cmd *cmd)
 {
-	//ft_printf("size: %d, cmd: '%s'", ft_strlen(cmd->cmd), cmd->cmd);
+	// ft_printf("size: %d, cmd: '%s'", ft_strlen(cmd->cmd), cmd->cmd);
 	if (ft_strncmp(cmd->cmd, "echo", 5) == 0)
 		echo(cmd);
 	else if (ft_strncmp(cmd->cmd, "env", 4) == 0)
 		env(cmd);
 	else if (ft_strncmp(cmd->cmd, "pwd", 4) == 0)
 		pwd(cmd);
+	else if (ft_strncmp(cmd->cmd, "export", 7) == 0)
+		export(cmd);
+	else if (ft_strncmp(cmd->cmd, "cd", 2) == 0)
+		cd(cmd);
 	else
 		write(1, cmd->cmd, ft_strlen(cmd->cmd) + 1);
 	return (0);

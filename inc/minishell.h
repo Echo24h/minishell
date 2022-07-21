@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 # include <fcntl.h>
 # include "readline/readline.h"
 # include "readline/history.h"
@@ -32,13 +33,15 @@
 typedef struct s_data
 {
 	t_list	*cmds;
+	char	**export;
+	char	**envp;
 }			t_data;
 
 typedef struct s_cmd
 {
 	char	*cmd;
+	char	**export;
 	char	**arg;
-	char	**envp;
 
 	t_data	*data;
 }			t_cmd;
@@ -47,6 +50,11 @@ typedef struct s_cmd
 
 void	clear_data(t_data *data);
 void	quit(char *error_message, int error_code, int clean);
+
+//		init.c
+
+// init export et envp
+void	init(t_data *data, char **envp);
 
 //		history.c functions
 
@@ -84,7 +92,7 @@ void 	print_cmd(t_cmd *cmd);
 // exec.c
 
 // While(t_list *cmds) in data, execute command
-int		exec(t_data *data, char **envp);
+int		exec(t_data *data);
 
 //bin.c
 
@@ -102,6 +110,8 @@ int		builtin(t_cmd *cmd);
 void	echo(t_cmd *cmd);
 void	env(t_cmd *cmd);
 void	pwd(t_cmd *cmd);
+void	export(t_cmd *cmd);
+void	cd(t_cmd *cmd);
 
 
 #endif

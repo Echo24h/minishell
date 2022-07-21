@@ -17,10 +17,10 @@ void	pwd(t_cmd *cmd)
 	int	i;
 
 	i = -1;
-	while (cmd->envp[++i])
-		if (!ft_strncmp(cmd->envp[i], "PWD=", 4))
+	while (cmd->data->envp[++i])
+		if (!ft_strncmp(cmd->data->envp[i], "PWD=", 4))
 		{
-			write(1, cmd->envp[i], ft_strlen(cmd->envp[i]));
+			write(1, cmd->data->envp[i], ft_strlen(cmd->data->envp[i]));
 			write(1, "\n", 1);
 		}
 }

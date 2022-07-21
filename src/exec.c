@@ -6,17 +6,16 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/18 04:34:33 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 04:09:01 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
 // Execute command and write OUT in fd[1] of pipe.
-void	exec_cmd(t_cmd *cmd, char **envp)
+void	exec_cmd(t_cmd *cmd)
 {
-	cmd->envp = envp;
-	if (ft_strnstr("echo env pwd cd", cmd->cmd, 16))
+	if (ft_strnstr("echo env pwd cd export", cmd->cmd, 23))
 		builtin(cmd);
 	else
 	{
@@ -26,7 +25,7 @@ void	exec_cmd(t_cmd *cmd, char **envp)
 	}
 }
 
-int	exec(t_data *data, char **envp)
+static void	exec_pipe(t_data *data)
 {
 	pid_t	pid;
 	int		fd[2];
@@ -47,9 +46,9 @@ int	exec(t_data *data, char **envp)
 			if (data->cmds->next)
 				dup2(fd[1], 1);
 			close(fd[1]);
-			exec_cmd(data->cmds->content, envp);
+			exec_cmd(data->cmds->content);
 			exit(0);
-		}
+		}	
 		else
 		{
 			close(fd[1]);
@@ -66,5 +65,22 @@ int	exec(t_data *data, char **envp)
 	close(fd_tmp);
 	while (waitpid(-1, 0, 0) > 0)
 				;
+}
+
+static void	exec_solo(t_cmd *cmd)
+{
+	if (ft_strnstr("echo env pwd cd export", cmd->cmd, 23))
+		builtin(cmd);
+	else
+		exec_pipe(cmd->data);
+}
+
+int	exec(t_data *data)
+{
+	if (data->cmds->next)
+		exec_pipe(data);
+	else
+		if (data->cmds->content)
+			exec_solo(data->cmds->content);
 	return (0);
 }

@@ -1,44 +1,9 @@
+ks
 ls
-ls -+lsda
-ls dsadasd
-ls dsadasd dsadsa
-ls
-;s
-ls
-ls
-ls -l
-ls
-ls -l
-ls
-ls *sdfdsfds
-ls
-ls -l
-ls -l
-ls -la
-ls -l l
-ls -l l | ls
-ls -l l | ls | ls | cat
-ls
+ks
+ls | cat
 cat | cat | ls
-cat | cat |
-cat
-cat | cat | ls
+cat | ls -la
 ls
-cat | cat | ls
-cat | cat | ls
-cat | ls
-ls
-ls -l
-ls -l | cat
-ls -l | cat | wc
-ls
-cat
-ls
-ls -l
-rm path 
-ls
-mkdir coucou
-ls
-rm -rf coucou
-ls
-echo test
+export
+export ALL=10

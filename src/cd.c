@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 18:36:34 by gborne            #+#    #+#             */
-/*   Updated: 2022/05/27 19:12:55 by gborne           ###   ########.fr       */
+/*   Created: 2022/07/21 04:08:10 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/21 04:08:13 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "../inc/minishell.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	cd(t_cmd *cmd)
 {
-	t_list	*curr;
-	t_list	*next;
-
-	curr = *lst;
-	while (curr)
+	printf("mmmm\n");
+	if (cmd->arg[1] == NULL)
 	{
-		next = curr->next;
-		ft_lstdelone(curr, del);
-		curr = next;
+		printf("pls\n");
+		chdir("/");
 	}
-	*lst = NULL;
+	else if (!access(cmd->arg[1], R_OK))
+	{
+		printf("arg: %s\n", cmd->arg[1]);
+		chdir(cmd->arg[1]);
+	}
+	else if (cmd->arg[1][0] == '~')
+		chdir("Users/[login]");
+	else
+		printf("Folder not found\n");
 }

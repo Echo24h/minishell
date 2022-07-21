@@ -41,20 +41,21 @@ void	bin(t_cmd *cmd)
 	char	**path_list;
 	int		i;
 
-	path_list = get_path_list(cmd->envp);
+	path_list = get_path_list(cmd->data->envp);
 	i = -1;
 	if(path_list == NULL)
 		write(1, "Error 'path_list'\n", 19);
 	else
 	{
+		execve(cmd->cmd, cmd->arg, cmd->data->envp);
 		while (path_list[++i])
 		{
 			path = ft_strdup(path_list[i]);
 			path = ft_strjoin(path, "/");
 			path = ft_strjoin(path, cmd->cmd);
-			execve(path, cmd->arg, cmd->envp);
+			execve(path, cmd->arg, cmd->data->envp);
 		}
-		//printf("%s-\n", path);
+		// printf("%s-\n", path);
 		write(1, "Error bin.c file not found\n", 28);
 		free_tab(path_list);
 	}

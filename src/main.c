@@ -32,6 +32,7 @@ int	main(int argc __unused, char **arg __unused, char **envp)
 	char	*input;
 	t_data	data;
 
+	init(&data, envp);
 	manage_history(NULL);
 	while (1)
 	{
@@ -44,7 +45,7 @@ int	main(int argc __unused, char **arg __unused, char **envp)
 			if (!ft_strncmp(input, "exit", 5))
 				quit(input, 0, 1);
 			get_cmds(input, &data);
-			exec(&data, envp);
+			exec(&data);
 			clear_data(&data);
 		}
 	}

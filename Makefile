@@ -54,7 +54,9 @@ SRC			=	main.c \
 				utils.c \
 				debug.c exec.c \
 				bin.c builtin.c \
-				echo.c env.c pwd.c history.c
+				echo.c env.c pwd.c history.c \
+				export.c cd.c \
+				init.c
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 

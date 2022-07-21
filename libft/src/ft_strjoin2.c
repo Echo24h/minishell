@@ -12,6 +12,20 @@
 
 #include "../inc/libft.h"
 
+
+int ft_strlen_debug(const char *tmp)
+{
+	int i;
+
+	i = 0;
+	if (tmp)
+	{
+		while(tmp[i])
+			i++;
+	}
+	return (i);
+}
+
 char	*ft_strjoin2(char *s1, char *s2, int clean_s1, int clean_s2)
 {
 	unsigned long	i;
@@ -39,4 +53,29 @@ char	*ft_strjoin2(char *s1, char *s2, int clean_s1, int clean_s2)
 	if (clean_s2)
 		free(s2);
 	return (dst);
+}
+// #include <stdio.h>
+char *ft_strjoin_2(const char *s1, const char *s2)
+{
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	char *new;
+
+	new = malloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2);
+	if (!new)
+		return (NULL);
+	if (s1)
+	{
+		while (s1[i])
+			new[j++] = s1[i++];
+	}
+	if (s2)
+	{
+		while(s2[k])
+			new[j++] = s2[k++];
+	}
+	new[j++] = '\n';
+	new[j] = 0;
+	return (new);
 }

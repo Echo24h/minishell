@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdarg.h>
 # include <stdint.h>
+// # include <stdlib.h>
 
 # define BUFFER_SIZE	1024
 # define INT_MAX		2147483647
@@ -68,6 +69,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char *s1, char const *s2);
+char			*ft_strjoin_2(const char *s1, const char *s2);
 char			*ft_strjoin2(char *s1, char *s2, int clean_s1, int clean_s2);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strnstr(const char *haystack, const char *needle,
