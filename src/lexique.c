@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   echo.c                                             :+:      :+:    :+:   */
+/*   lexique.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 04:55:43 by gborne           ###   ########.fr       */
+/*   Created: 2022/07/21 04:18:55 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/21 04:55:35 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-void	echo(t_cmd *cmd)
+char    *lexique(const char *cmd_line)
 {
-	char	*str;
-	int		i;
-
-	i = 1;
-	if (cmd->arg[i])
-	{
-		str = ft_strdup(cmd->arg[i]);
-		while (cmd->arg[++i])
-		{
-			str = ft_strjoin(str, " ");
-			str = ft_strjoin(str, cmd->arg[i]);
-		}
-		str = ft_strjoin(str, "\n");
-		write(1, str, ft_strlen(str));
-		free(str);
-	}
+    char *line;
+    
+    line = ft_strdup(cmd_line);
+    return (line);
 }

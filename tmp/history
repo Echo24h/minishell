@@ -1,9 +1,9 @@
-ks
 ls
-ks
-ls | cat
-cat | cat | ls
-cat | ls -la
-ls
-export
-export ALL=10
+echo test
+echo test
+echo test tes
+echo test tesrt
+echo "test tesrt"
+echo "test"" tesrt"
+echo "test""tesrt"
+echo "test" "tesrt"

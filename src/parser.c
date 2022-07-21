@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/18 04:31:51 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 04:55:40 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 static char	**get_arg(char *cmd_line)
 {
 	char			**arg;
+	char			*line;
 
-	arg = ft_split(cmd_line, ' ');
+	line = lexique(cmd_line);
+	arg = ft_split(line, ' ');
 	/*int i = -1;
 	printf("cmd_line=%s\n", cmd_line);
 	while (arg[++i])

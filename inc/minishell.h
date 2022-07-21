@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/16 23:26:55 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 04:27:51 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,18 @@ typedef struct s_cmd
 void	clear_data(t_data *data);
 void	quit(char *error_message, int error_code, int clean);
 
-//		init.c
-
 // init export et envp
 void	init(t_data *data, char **envp);
 
-//		history.c functions
-
-/**
- * @brief manage history and add (input) to the history file 
- * 
- * @param cmd command to add
- */
+// manage history and add (input) to the history file 
 void	manage_history(char *cmd);
 
 //		parser.c functions
 
-/**
- * @brief Parse the (input) and build the command list in (data)
- * 
- * @param input input to parse
- * @param data 	data to build the command list in
- */
+// Parse the (input) and build the command list in (data)
 void	get_cmds(char *input, t_data *data);
+// Read the cmd line and thransform them for the parsing
+char	*lexique(const char *cmd_line);
 
 //	signals.c
 
