@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 04:55:38 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 05:11:54 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,14 @@ int	main(int argc __unused, char **arg __unused, char **envp)
 	{
 		input = readline(CYELLOW "minishell$ " RESET);
 		if (!input)
-			quit("exit", 0, 0);
+			ft_exit();
 		else if (ft_strlen(input))
 		{
 			manage_history(input);
-			if (!ft_strncmp(input, "exit", 5))
-				quit(input, 0, 1);
 			get_cmds(input, &data);
 			exec(&data);
 			clear_data(&data);
 		}
 	}
 	return (0);
-}
-
-void	quit(char *error_message, int error_code, int clean)
-{
-	if (clean >= 2)
-		;
-	if (error_message)
-		ft_putendl_fd(error_message, 1);
-	if (clean == 1)
-		free(error_message);
-	exit(error_code);
 }

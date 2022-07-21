@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/21 04:27:51 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 05:04:40 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int		is_builtin(t_cmd *cmd);
 int		builtin(t_cmd *cmd);
 
 // Builtin
+void    ft_exit(void);
 void	echo(t_cmd *cmd);
 void	env(t_cmd *cmd);
 void	pwd(t_cmd *cmd);

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 04:09:01 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/21 05:05:56 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Execute command and write OUT in fd[1] of pipe.
 void	exec_cmd(t_cmd *cmd)
 {
-	if (ft_strnstr("echo env pwd cd export", cmd->cmd, 23))
+	if (ft_strnstr("echo env pwd cd export exit", cmd->cmd, 28))
 		builtin(cmd);
 	else
 	{
@@ -69,7 +69,7 @@ static void	exec_pipe(t_data *data)
 
 static void	exec_solo(t_cmd *cmd)
 {
-	if (ft_strnstr("echo env pwd cd export", cmd->cmd, 23))
+	if (ft_strnstr("echo env pwd cd export exit", cmd->cmd, 28))
 		builtin(cmd);
 	else
 		exec_pipe(cmd->data);

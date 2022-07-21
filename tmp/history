@@ -1,9 +1,5 @@
+;s
 ls
-echo test
-echo test
-echo test tes
-echo test tesrt
-echo "test tesrt"
-echo "test"" tesrt"
-echo "test""tesrt"
-echo "test" "tesrt"
+exit
+ls | exit
+exit | ls

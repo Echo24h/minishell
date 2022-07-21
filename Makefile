@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 02:51:50 by gborne            #+#    #+#              #
-#    Updated: 2022/07/21 04:25:35 by gborne           ###   ########.fr        #
+#    Updated: 2022/07/21 05:04:58 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRC			=	main.c \
 				utils.c \
 				debug.c exec.c \
 				bin.c builtin.c \
-				echo.c env.c pwd.c history.c \
+				echo.c env.c pwd.c exit.c history.c \
 				export.c cd.c \
 				init.c lexique.c
 
