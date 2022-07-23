@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 04:55:43 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/23 08:57:32 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ void	echo(t_cmd *cmd)
 		write(1, str, ft_strlen(str));
 		free(str);
 	}
+	else
+		write(1, "\n", 2);
 }

@@ -1,13 +1,9 @@
 echo $PATH
-echo $PAT
-echo $PATH=
-echo $PATH
-echo $PATH=
-echo $PATH==
-echo $PATH
-echo $PATH=
-echo $PATH==
-echo $PATH
-echo $PATH=
-echo $PATH=10
-echo $PATH
+echo $USER
+echo $USER $PATH
+echo $USER $PATH te
+echo $USER $PATH test
+echo $H
+echo $|
+echo $
+echo $|
