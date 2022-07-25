@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 05:11:54 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/25 19:11:31 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,34 @@ void	clear_data(t_data *data)
 	free(data->cmds);
 }
 
-int	main(int argc __unused, char **arg __unused, char **envp)
+int	error_quotes(const char *input)
+{
+	int	simple_quotes;
+	int	double_quotes;
+	int	i;
+
+	simple_quotes = 0;
+	double_quotes = 0;
+	i = -1;
+	while (input[++i])
+	{
+		if (input[i] == '\'')
+			simple_quotes++;
+		else if (input[i] == '\"')
+			double_quotes++;
+	}
+	if (simple_quotes % 2 || double_quotes % 2)
+		return (1);
+	return (0);
+}
+
+int	main(int argc, char **argv, char **envp)
 {
 	char	*input;
 	t_data	data;
 
+	(void)argv;
+	(void)argc;
 	init(&data, envp);
 	manage_history(NULL);
 	while (1)
@@ -41,8 +64,10 @@ int	main(int argc __unused, char **arg __unused, char **envp)
 			ft_exit();
 		else if (ft_strlen(input))
 		{
+			//if (error_quotes(input))
+			//	write(1, "Error\nWrong quotes\n", 20);
 			manage_history(input);
-			get_cmds(input, &data);
+			parser(input, &data);
 			exec(&data);
 			clear_data(&data);
 		}

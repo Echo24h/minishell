@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/21 05:42:05 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/25 14:29:12 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,19 @@ void	quit(char *error_message, int error_code, int clean);
 // init export et envp
 void	init(t_data *data, char **envp);
 
-// manage history and add (input) to the history file 
+// manage history and add (input) to the history file
 void	manage_history(char *cmd);
 
 //		parser.c functions
 
 // Parse the (input) and build the command list in (data)
-void	get_cmds(char *input, t_data *data);
+void	parser(char *input, t_data *data);
 // Read the cmd line and thransform them for the parsing
-char	*lexique(t_data *data, const char *cmd_line);
+char	*lexique_var(t_data *data, const char *cmd_line);
+// Read the input and parse arg (space, simple quote and double quotes)
+char	**lexique_arg(const char *input);
+// Read the input and parse pipe
+char	**lexique_pipe(const char *input);
 
 //	signals.c
 

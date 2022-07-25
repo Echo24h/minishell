@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/17 02:51:50 by gborne            #+#    #+#              #
-#    Updated: 2022/07/21 05:04:58 by gborne           ###   ########.fr        #
+#    Updated: 2022/07/25 14:21:37 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ SRC			=	main.c \
 				bin.c builtin.c \
 				echo.c env.c pwd.c exit.c history.c \
 				export.c cd.c \
-				init.c lexique.c
+				init.c lexique_var.c lexique_arg.c lexique_pipe.c
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 05:33:03 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/25 14:29:29 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ static char	**get_arg(t_data *data, char *cmd_line)
 	char			**arg;
 	char			*line;
 
-	line = lexique(data, cmd_line);
-	arg = ft_split(line, ' ');
+	line = lexique_var(data, cmd_line);
+	arg = lexique_arg(line);
+	//arg = ft_split(line, ' ');
 	/*int i = -1;
 	printf("cmd_line=%s\n", cmd_line);
 	while (arg[++i])
@@ -63,15 +64,15 @@ static void	*cmd_init(char *cmd_line, t_data *data)
 	return ((void *)cmd);
 }
 
-void	get_cmds(char *input, t_data *data)
+void	parser(char *input, t_data *data)
 {
 	t_list	*cmds;
 	char	**cmd_tab;
 	int		i;
 
-	cmd_tab = ft_split(input, '|');
-	cmds = NULL;
+	cmd_tab = lexique_pipe(input);
 	i = -1;
+	cmds = NULL;
 	while (cmd_tab[++i])
 		ft_lstadd_back(&cmds, ft_lstnew(cmd_init(cmd_tab[i], data)));
 	free_tab(cmd_tab);

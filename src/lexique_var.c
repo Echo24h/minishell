@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lexique.c                                          :+:      :+:    :+:   */
+/*   lexique_var.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 04:18:55 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/23 09:13:53 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/25 13:11:07 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ static char    *replace_var_env(t_data *data, char *line)
     return (new);
 }
 
-char    *lexique(t_data *data, const char *cmd_line)
+char    *lexique_var(t_data *data, const char *cmd_line)
 {
     char *line;
-    
+
     line = ft_strdup(cmd_line);
     line = replace_var_env(data, line);
     return (line);
