@@ -6,24 +6,46 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/25 19:15:29 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 04:47:24 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
 
-char	*ft_subchar(char *str, const char c)
+char	*subquote(char *str, char c)
 {
 	int		i;
 	int		o;
+	int		quote;
+	char	revquote;
 	char	*new;
 
 	i = -1;
 	o = 0;
+	quote = 0;
+	revquote = '\"';
+	if (c == '\"')
+		revquote = '\'';
 	while(str[++i])
+	{
 		if (str[i] != c)
-			o++;
+		{
+			if (str[i] == revquote && quote % 2 == 0)
+			{
+				i++;
+				while (str[i] && str[i] != revquote)
+				{
+					o++;
+					i++;
+				}
+			}
+			else
+				o++;
+		}
+		else
+			quote++;
+	}
 	if (o == 0)
 		return (NULL);
 	new = (char *)ft_calloc(o + 1, sizeof(char));
@@ -33,9 +55,24 @@ char	*ft_subchar(char *str, const char c)
 	{
 		if (str[i] != c)
 		{
-			new[o] = str[i];
-			o++;
+			if (str[i] == revquote && quote % 2 == 0)
+			{
+				i++;
+				while (str[i] && str[i] != revquote)
+				{
+					new[o] = str[i];
+					o++;
+					i++;
+				}
+			}
+			else
+			{
+				new[o] = str[i];
+				o++;
+			}
 		}
+		else
+			quote++;
 	}
 	new[o] = '\0';
 	if (str)
@@ -102,7 +139,7 @@ char	**get_arg(const char *input)
 					break;
 				i++;
 			}
-			args = add_arg(args, ft_subchar(ft_substr(input, i_tmp, i - i_tmp), '"'));
+			args = add_arg(args, subquote(ft_substr(input, i_tmp, i - i_tmp), '"'));
 			i_tmp = i + 1;
 		}
 		else if (input[i] == '\'')
@@ -120,7 +157,7 @@ char	**get_arg(const char *input)
 					break;
 				i++;
 			}
-			args = add_arg(args, ft_subchar(ft_substr(input, i_tmp, i - i_tmp), '\''));
+			args = add_arg(args, subquote(ft_substr(input, i_tmp, i - i_tmp), '\''));
 			i_tmp = i + 1;
 		}
 		else if (input[i] == ' ' && i != i_tmp && !ft_strchr("\' \"", input[i - 1]))
