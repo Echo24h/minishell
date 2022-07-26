@@ -21,4 +21,5 @@ static void	export_init(t_data *data, char **envp)
 void	init(t_data *data, char **envp)
 {
     export_init(data, envp);
+	data->pipeline_status = ft_itoa(0);
 }

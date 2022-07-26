@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/25 14:29:29 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 08:48:21 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	*cmd_init(char *cmd_line, t_data *data)
 	//printf("cmd_line=%s\n", cmd_line);
 	cmd = malloc(sizeof(t_cmd));
 	cmd->arg = get_arg(data, cmd_line);
-	cmd->cmd = get_cmd(cmd_line);
+	cmd->cmd = get_cmd(cmd->arg[0]);
 	cmd->data = data;
 	//free(cmd_line);
 	//print_cmd(cmd);

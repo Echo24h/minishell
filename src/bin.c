@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/18 04:22:21 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 12:02:08 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	bin(t_cmd *cmd)
 	path_list = get_path_list(cmd->data->envp);
 	i = -1;
 	if(path_list == NULL)
-		write(1, "Error 'path_list'\n", 19);
+		write(1, "Error : path not found\n", 24);
 	else
 	{
 		execve(cmd->cmd, cmd->arg, cmd->data->envp);
@@ -55,8 +55,10 @@ void	bin(t_cmd *cmd)
 			path = ft_strjoin(path, cmd->cmd);
 			execve(path, cmd->arg, cmd->data->envp);
 		}
-		// printf("%s-\n", path);
-		write(1, "Error bin.c file not found\n", 28);
+		write(1, "Error : '", 10);
+		write(1, cmd->cmd, ft_strlen(cmd->cmd));
+		write(1,"' command not found\n", 21);
 		free_tab(path_list);
 	}
+	exit(127);
 }

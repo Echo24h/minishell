@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/25 14:29:12 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 10:22:01 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_data
 	t_list	*cmds;
 	char	**export;
 	char	**envp;
+	char	*pipeline_status;
 }			t_data;
 
 typedef struct s_cmd
@@ -77,11 +78,6 @@ void	signal_controller(int signal);
 
 void	free_tab(char **tab);
 
-// print.c
-
-// Affiche la liste de commandes (temporaire pour débug)
-void 	print_cmd(t_cmd *cmd);
-
 // exec.c
 
 // While(t_list *cmds) in data, execute command
@@ -94,8 +90,8 @@ void	bin(t_cmd *cmd);
 
 // builtin.c
 
+// Return (1) if cmd->cmd is builtin, else return (0)
 int		is_builtin(t_cmd *cmd);
-
 // Execute buitin command
 int		builtin(t_cmd *cmd);
 

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 03:45:19 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 09:48:45 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,21 @@ void	clear_data(t_data *data)
 
 int	error_quotes(const char *input)
 {
-	int	simple_quotes;
-	int	double_quotes;
+	int	simplequote;
+	int	doublequote;
 	int	i;
 
-	simple_quotes = 0;
-	double_quotes = 0;
+	simplequote = 0;
+	doublequote = 0;
 	i = -1;
 	while (input[++i])
 	{
-		if (input[i] == '\'')
-			simple_quotes++;
-		else if (input[i] == '\"')
-			double_quotes++;
+		if (doublequote % 2 == 0 && input[i] == '\'')
+			simplequote++;
+		else if (simplequote % 2 == 0 && input[i] == '\"')
+			doublequote++;
 	}
-	if (simple_quotes % 2 || double_quotes % 2)
+	if (simplequote % 2 || doublequote % 2)
 		return (1);
 	return (0);
 }
@@ -64,12 +64,15 @@ int	main(int argc, char **argv, char **envp)
 			ft_exit();
 		else if (ft_strlen(input))
 		{
-			//if (error_quotes(input))
-			//	write(1, "Error\nWrong quotes\n", 20);
-			manage_history(input);
-			parser(input, &data);
-			exec(&data);
-			clear_data(&data);
+			if (error_quotes(input))
+				write(1, "Error : wrong quotes\n", 22);
+			else
+			{
+				manage_history(input);
+				parser(input, &data);
+				exec(&data);
+				clear_data(&data);
+			}
 		}
 	}
 	return (0);

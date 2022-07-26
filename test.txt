@@ -13,3 +13,7 @@ d q"""" "", ",n " kj   n"k"ij"ilj "lk"ij"ij,"l,"lk "l," lk"l   k   "  o ko pmkml
 "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
 
 test1 "test2" 'test3' "test'4'" 'test"5"'
+
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+
+$?"     " $? "      "'"$?"''     '-- '$?' "'$?'"

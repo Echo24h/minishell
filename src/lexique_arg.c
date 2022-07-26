@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 05:46:22 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 06:14:46 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*subquote(char *str, char c)
 	revquote = '\"';
 	if (c == '\"')
 		revquote = '\'';
+	// FIRST READ FOR MALLOC "o"
 	while(str[++i])
 	{
 		if (str[i] != c)
@@ -51,6 +52,7 @@ char	*subquote(char *str, char c)
 	new = (char *)ft_calloc(o + 1, sizeof(char));
 	i = -1;
 	o = 0;
+	// WRITE IN new[o] WHITH SAME BOUCLE
 	while(str[++i])
 	{
 		if (str[i] != c)
@@ -80,6 +82,7 @@ char	*subquote(char *str, char c)
 	return (new);
 }
 
+// Add the string 'add' in existant **args or create this, and return the new '**args'
 char	**add_arg(char **args, char *add)
 {
 	int		i;
@@ -126,6 +129,9 @@ char	**get_arg(const char *input)
 	{
 
 		//printf("i=%d i_tmp=%d\n", i, i_tmp);
+
+		// MANAGE DOUBLE QUOTES
+
 		if (input[i] == '\"')
 		{
 			while(input[i_tmp] == ' ')
@@ -147,6 +153,9 @@ char	**get_arg(const char *input)
 			args = add_arg(args, subquote(ft_substr(input, i_tmp, i - i_tmp), '"'));
 			i_tmp = i + 1;
 		}
+
+		// MANAGE SIMPLE QUOTE
+
 		else if (input[i] == '\'')
 		{
 			while(input[i_tmp] == ' ')
@@ -168,6 +177,8 @@ char	**get_arg(const char *input)
 			args = add_arg(args, subquote(ft_substr(input, i_tmp, i - i_tmp), '\''));
 			i_tmp = i + 1;
 		}
+		// MANAGE SPACE
+
 		else if (input[i] == ' ' && i != i_tmp && !ft_strchr("\' \"", input[i - 1]))
 		{
 			while(input[i_tmp] == ' ')
@@ -179,6 +190,8 @@ char	**get_arg(const char *input)
 			i--;
 		}
 	}
+
+	// END OF INPUT
 	if (i != i_tmp && !ft_strchr("\' \"", input[i - 1]))
 		args = add_arg(args, ft_substr(input, i_tmp, i - i_tmp));
 	return (args);
@@ -189,9 +202,11 @@ char	**lexique_arg(const char *input)
     char **arg;
 
 	arg = get_arg(input);
+
+	/*
 	int i = -1;
 	while(arg[++i])
 		printf("arg[%d]={%s}\n",i, arg[i]);
-	exit(0);
+	exit(0);*/
     return (arg);
 }
