@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 04:47:24 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 05:46:22 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ char	**get_arg(const char *input)
 {
 	int		i;
 	int		quote;
+	int		revquote;
 	int		i_tmp;
 	char	**args;
 
@@ -120,6 +121,7 @@ char	**get_arg(const char *input)
 	i_tmp = 0;
 	i = -1;
 	quote = 0;
+	revquote = 0;
 	while(input[++i])
 	{
 
@@ -129,13 +131,16 @@ char	**get_arg(const char *input)
 			while(input[i_tmp] == ' ')
 				i_tmp++;
 			quote = 1;
+			revquote = 0;
 			i++;
 			while (input[i])
 			{
 				//printf("i=%d quote=%d\n", i, quote);
-				if (input[i] == '\"')
+				if (quote % 2 == 0 && input[i] == '\'')
+					revquote++;
+				else if (revquote % 2 == 0 && input[i] == '\"')
 					quote++;
-				if (input[i] == ' ' && quote % 2 == 0)
+				else if (input[i] == ' ' && quote % 2 == 0 && revquote % 2 == 0)
 					break;
 				i++;
 			}
@@ -147,13 +152,16 @@ char	**get_arg(const char *input)
 			while(input[i_tmp] == ' ')
 				i_tmp++;
 			quote = 1;
+			revquote = 0;
 			i++;
 			while (input[i])
 			{
 				//printf("i=%d quote=%d\n", i, quote);
-				if (input[i] == '\'')
+				if (quote % 2 == 0 && input[i] == '\"')
+					revquote++;
+				else if (revquote % 2 == 0 && input[i] == '\'')
 					quote++;
-				if (input[i] == ' ' && quote % 2 == 0)
+				else if (input[i] == ' ' && quote % 2 == 0  && revquote % 2 == 0)
 					break;
 				i++;
 			}
