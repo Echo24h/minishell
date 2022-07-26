@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 11:59:40 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 12:07:57 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ int	builtin(t_cmd *cmd)
 		cd(cmd);
 	else if (ft_strcmp(cmd->cmd, "exit") == 0)
 		ft_exit();
-	else
-	{
-		write(1, "Error : builtin doesn't exist", 30);
-		exit(127);
-	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 09:48:45 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 12:53:46 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ int	main(int argc, char **argv, char **envp)
 	(void)argc;
 	init(&data, envp);
 	manage_history(NULL);
+	signal(SIGINT, &signal_controller);
 	while (1)
 	{
-		input = readline(CYELLOW "minishell$ " RESET);
+		input = readline(PROMPT);
 		if (!input)
 			ft_exit();
 		else if (ft_strlen(input))

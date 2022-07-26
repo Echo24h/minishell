@@ -1,61 +1,31 @@
 ls
-ls | ls
-cagt |ý ls
+[1;32mminishell$ [0m
+make[1;32mminishell$ [0m
+exit
+[1;32mminishell$ [0m
+[1xit32mminishell$ [0m
+exit
 ls
-ls
-cat | ls
-s
-ls
-ls
-cat valgrind_readline.supp 
-ls
-cat | cat | ls
-ls
-ls
-cd
-ls
-ls
-cat | cat | ls
-ls
-ls
-echo | ls
+maexit
+exit
 ls
 ls
 ls
-cat | cat | ls
-echo $?
-e
-ls
-echo $?
-cat | cat | e
-echo $?
 ls
 ls
+lsdsqdqsls
+exit
 ls
-l
-echo $?
-cat | cat | echo $?
-cat | cat | echo $?
-cat | cat | e | echo $?
-cat | cat | e | echo $?
-cat | cat | e | echo $?
-dsqd
-s
-echo | $?
-df
-echo | $?
-echo | $?
-echo | $?
-echo | $?
-sdf
+lsls
 ls
 ls
-ls e
-echo $?
-cat e
-ls $e
-cat dsqdqsdqs
-pdqsdqsdqs
 ls
-dsqd
-echo $?"     " $? "      "'"$?"''     '-- '$?' "'$?'"
+make
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 11:56:04 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/26 12:05:58 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ int	exec(t_data *data)
 	else
 		if (data->cmds->content)
 			exec_solo(data->cmds->content);
-	printf("status=%s\n", data->pipeline_status);
+	//printf("status=%s\n", data->pipeline_status);
 	return (0);
 }
