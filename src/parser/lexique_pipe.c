@@ -6,11 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:17:07 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 08:55:59 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 15:20:11 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 int	cmd_count(char const *s, int simplequote, int doublequote)
 {

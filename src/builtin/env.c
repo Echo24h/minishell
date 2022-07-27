@@ -6,11 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/16 23:21:31 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 15:20:41 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 void	env(t_cmd *cmd)
 {

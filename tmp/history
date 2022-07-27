@@ -1,3 +1,17 @@
-cat 
-ls | ls | cat
-cat | cat | ls
+ls
+ls
+ls
+cd ..
+ls
+cat valgrind_readline.supp 
+echo test
+cat
+ls
+ls
+make
+make clean
+make
+ls
+cd ..
+ls
+cd ..

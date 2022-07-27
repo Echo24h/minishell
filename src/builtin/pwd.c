@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 05:02:28 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 05:11:51 by gborne           ###   ########.fr       */
+/*   Created: 2022/05/27 20:50:08 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/27 15:20:57 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
-void    ft_exit(void)
+void	pwd(t_cmd *cmd)
 {
-    write(1, "exit\n", 6);
-    exit(0);
+	int	i;
+
+	i = -1;
+	while (cmd->data->envp[++i])
+		if (!ft_strncmp(cmd->data->envp[i], "PWD=", 4))
+		{
+			write(1, cmd->data->envp[i], ft_strlen(cmd->data->envp[i]));
+			write(1, "\n", 1);
+		}
 }

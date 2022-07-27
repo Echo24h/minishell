@@ -5,133 +5,80 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/17 02:51:50 by gborne            #+#    #+#              #
-#    Updated: 2022/07/26 08:34:19 by gborne           ###   ########.fr        #
+#    Created: 2022/07/27 14:38:38 by gborne            #+#    #+#              #
+#    Updated: 2022/07/27 21:22:13 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Color Aliases
-DEFAULT = \033[0;39m
-GRAY = \033[0;90m
-RED = \033[0;91m
-GREEN = \033[0;92m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
+NAME = minishell
 
-SHELL=/bin/bash
-UNAME = $(shell uname -s)
+LIBFT = libft/libft.a
+READLINE = -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/include
 
-# Properties for MacOS
-CDEBUG = #-fsanitize=address
-CHECKER = tests/checker_Mac
-
-# LEAKS = valgrind --leak-check=full --track-fds=yes --trace-children=yes -s -q
-ifeq ($(UNAME), Linux)
-	#Properties for Linux
-	LEAKS = valgrind --leak-check=full --show-leak-kinds=definite --trace-children=yes
-	LEAKSSUPP = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=definite
-endif
-
-# Make variables
-CFLAGS = -Wall -Wextra -Werror -MD -g3 -g
-RM = rm -f
 CC = gcc
-PRINTF = LC_NUMERIC="en_US.UTF-8" printf
-SRC_DIR = src
-OBJ_DIR = obj
-TMP_DIR = tmp
-BIN_DIR = bin
-LIBFT = libft/bin/libft.a
-BIN = minishell
-NAME = $(BIN_DIR)/$(BIN)
+CFLAGS = -Wall -Wextra -Werror -g
+LFLAGS = $(LIBFT) $(READLINE) -lreadline
 
-SRC			=	main.c \
-				parser.c \
-				signals.c \
-				utils.c \
-				exec.c \
-				bin.c builtin.c \
-				echo.c env.c pwd.c exit.c history.c \
-				export.c cd.c \
-				init.c lexique_var.c lexique_arg.c lexique_pipe.c
+VALGRIND = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=definite
 
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+SRC = $(wildcard src/*.c src/*/*.c)
+OBJ = $(SRC:.c=.o)
 
-OBJ_LFT = $(addprefix $(OBJ_LFT_DIR)/, $(SRC_LFT:.c=.o))
-
-# Progress vars
-SRC_COUNT_TOT := $(shell expr $(shell echo -n $(SRC) | wc -w) - $(shell ls -l $(OBJ_DIR) 2>&1 | grep ".o" | wc -l) + 1)
-ifeq ($(shell test $(SRC_COUNT_TOT) -le 0; echo $$?),0)
-	SRC_COUNT_TOT := $(shell echo -n $(SRC) | wc -w)
-endif
-SRC_COUNT := 0
-SRC_PCT = $(shell expr 100 \* $(SRC_COUNT) / $(SRC_COUNT_TOT))
+%.o : %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 all: $(NAME)
 
-$(NAME): create_dirs compile_libft $(OBJ)
-	@$(CC) -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/include $(CFLAGS) $(CDEBUG) $(OBJ) $(LIBFT) -lreadline -o $@
-	@$(PRINTF) "\r%100s\r$(GREEN)$(BIN) is up to date!$(DEFAULT)\n"
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@$(eval SRC_COUNT = $(shell expr $(SRC_COUNT) + 1))
-	@$(PRINTF) "\r%100s\r[ %d/%d (%d%%) ] Compiling $(BLUE)$<$(DEFAULT)..." "" $(SRC_COUNT) $(SRC_COUNT_TOT) $(SRC_PCT)
-	@$(CC) -I ~/.brew/opt/readline/include $(CFLAGS) $(CDEBUG) -c $< -o $@
-
-compile_libft:
-	@make -C libft
-
-create_dirs:
-	@mkdir -p $(OBJ_DIR)
-	@mkdir -p $(TMP_DIR)
-	@mkdir -p $(BIN_DIR)
-
-compare: all
-	@cd tests && ./compare.sh && cd ..
-
-test: all
-	@cd tests && ./test.sh && cd ..
+$(NAME) : $(OBJ)
+	make -C libft
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS)
 
 run: all
 	./$(NAME)
 
 leaks: all
-	$(LEAKS) ./$(NAME)
-
-leakssupp: all
-	$(LEAKSSUPP) ./$(NAME)
+	$(VALGRIND) ./$(NAME)
 
 clean:
-	@$(PRINTF) "$(CYAN)Cleaning up object files in $(BIN)...$(DEFAULT)\n"
-	@if [ -d "libft" ]; then \
-		make clean -C libft/; \
-	fi
-	@$(RM) -rf $(OBJ_DIR)
+	make clean -C libft
+	rm -f src/*.o src/*/*.o
 
 fclean: clean
-	@$(RM) -rf $(BIN_DIR)
-	@$(RM) -rf $(TMP_DIR)
-	@$(PRINTF) "$(CYAN)Removed $(BIN)$(DEFAULT)\n"
+	make fclean -C libft
+	rm -f minishell
 
-norminette:
-	@if [ -d "libft" ]; then \
-		make norminette -C libft/; \
-	fi
-	@$(PRINTF) "$(CYAN)\nChecking norm for $(BIN)...$(DEFAULT)\n"
-	@norminette -R CheckForbiddenSourceHeader $(SRC_DIR) inc/
+re: fclean all
+	make re -C libft
 
-re: fclean
-	@make all
+.PHONY: all init_libft run leaks clean fclean re
 
-git:
-	git add *
-	git commit -m "make git"
-	git push
+#make -C libft
+#$(OBJ)
 
--include $(OBJ_DIR)/*.d
--include $(OBJB_DIR)/*.d
+#$(OBJ)
+#$(call OBJ_LST $(OBJ))
+#$(addprefix $(DIR_OBJ),$(lastword $(subst /, ,$(OBJ))))
+#$(addprefix $(DIR_OBJ),$(lastword $(subst /, ,$(OBJ))))
+#@echo ${addprefix $(DIR_OBJ),$(subst /,,$(OBJ))}
+#@echo ${addprefix $(DIR_OBJ),$(shell echo $(OBJ) | tr ' ' '\n')}
+#make -C libft
+#@echo $(OBJ)
 
-.PHONY: all clean fclean norminette create_dirs test git re
+#@echo $(addprefix $(DIR_OBJ),$(lastword $(subst /, ,${<:$(DIR_SRC)%.c=%.o})))
+#@echo $(addprefix $(DIR_OBJ),$(lastword $(subst /, ,$(<:%.c=%.o))))
+#$(CC) $(CFLAGS) -c $< -o $(addprefix $(DIR_OBJ),$(lastword $(subst /, ,$(<:%.c=%.o))))
+
+
+# $@ nom cible
+# $< nom premiere dependance
+# $^ liste depandances
+# $? liste dependances plus recentes que la cible
+# $* nom fichier, sans extension
+
+#FUNCTION
+
+#CLEAR_PATH = $(shell $1 rev | cut -d'/' -f-1 | rev)
+#OBJ_LST = $(addprefix $(DIR_OBJ),$(subst builtin/,,$(subst parser/,,$(subst src/,,$1))))
+#@echo ${addprefix $(DIR_OBJ), $(shell ${<:$(DIR_SRC)%.c=%.o} rev | cut -d'/' -f-1 | rev)}
+#$(addprefix $(DIR_OBJ),$(subst builtin/,,$(subst parser/,,$(subst src/,,$(SRC:.c=.o)))))
+

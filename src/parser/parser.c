@@ -6,11 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 08:48:21 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 15:20:21 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 static char	**get_arg(t_data *data, char *cmd_line)
 {

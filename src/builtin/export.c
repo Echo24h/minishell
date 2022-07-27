@@ -1,4 +1,4 @@
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 int	check_if_equal(const char *s)
 {
@@ -91,7 +91,7 @@ void	export(t_cmd *cmd)
 				printf("export: %s\n", cmd->data->export[i]);
 	}
 	else
-	{	
+	{
 		if (check_if_equal(cmd->arg[1]))
 			add_env_line(cmd);
 		add_exp_line(cmd);

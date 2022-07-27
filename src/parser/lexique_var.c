@@ -6,11 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 04:18:55 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 11:30:16 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 15:20:16 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 static int  id_var(t_data *data, const char *var)
 {

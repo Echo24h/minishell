@@ -6,11 +6,11 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/26 06:14:46 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 15:20:03 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
 
 char	*subquote(char *str, char c)
