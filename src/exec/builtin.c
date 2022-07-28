@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 15:20:27 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/28 03:36:35 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	is_builtin(t_cmd *cmd)
 		return (1);
 	else if (ft_strcmp(cmd->cmd, "exit") == 0 && ft_strlen(cmd->cmd) == 4)
 		return (1);
+	else if (ft_strcmp(cmd->cmd, "unset") == 0 && ft_strlen(cmd->cmd) == 5)
+		return (1);
 	else
 		return (0);
 }
@@ -37,13 +39,15 @@ int	builtin(t_cmd *cmd)
 	else if (ft_strcmp(cmd->cmd, "env") == 0)
 		env(cmd);
 	else if (ft_strcmp(cmd->cmd, "pwd") == 0)
-		pwd(cmd);
+		pwd(0);
 	else if (ft_strcmp(cmd->cmd, "export") == 0)
 		export(cmd);
 	else if (ft_strcmp(cmd->cmd, "cd") == 0)
 		cd(cmd);
 	else if (ft_strcmp(cmd->cmd, "exit") == 0)
 		ft_exit();
+	else if (ft_strcmp(cmd->cmd, "unset") == 0)
+		unset(cmd);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 04:18:55 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 15:20:16 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 23:23:14 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ static char    *replace_var_env(t_data *data, char *line)
         else if (simplequote % 2 == 0 && line[i] == '\"')
             doublequote++;
         //VAR
-
         if (simplequote % 2 == 0 && line[i] == '$'
             && (ft_isalnum(line[i + 1]) || line[i + 1] == '?'))
         {
@@ -110,6 +109,7 @@ static char    *replace_var_env(t_data *data, char *line)
                 var = ft_strjoin(var, "=");
                 if (id_var(data, var) != -1)
                     new = add_var(data, new, id_var(data, var));
+                free(var);
                 i_add = i;
                 i--;
             }

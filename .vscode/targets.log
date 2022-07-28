@@ -1,0 +1,696 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jul 27 23:34:53 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 15)
+TXT_BOLD = tput bold
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 28)
+OBJ = $(SRC:.c=.o)
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 27)
+SRC = $(wildcard src/*.c src/*/*.c)
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/gborne/Bureau/minishell
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/102
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"8e1a08857df44efaeace20a1f4372f40.fr","_translationsConfigFile":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/tcf.json","_cacheRoot":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr","_resolvedLanguagePackCoreLocation":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/corrupted.info","_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:42365
+# makefile (from 'Makefile', line 22)
+CFLAGS = -Wall -Wextra -Werror -g
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+ 
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = gborne
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+_ = /snap/code/102/usr/share/code/code
+# environment
+MANAGERPID = 1335
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# makefile (from 'Makefile', line 19)
+READLINE = -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/include
+# environment
+VSCODE_CWD = /home/gborne
+# makefile (from 'Makefile', line 25)
+VALGRIND = valgrind --suppressions=valgrind_readline.supp --leak-check=full --show-leak-kinds=definite
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/gborne/.local/bin:/home/gborne/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/gborne-Lenovo-Y520-15IKBN:@/tmp/.ICE-unix/1583,unix/gborne-Lenovo-Y520-15IKBN:/tmp/.ICE-unix/1583
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/gborne/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/102
+# environment
+SNAP_VERSION = 3b889b09
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = fb347f632a50457fa03774908c8ef5b5
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2048
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/gborne/Bureau/minishell
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1546
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/gborne
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/gborne/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = gborne
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = VHFf8TePw7D-eNjMJVLogRDuezLLseTj_wENSrDqfgMb5NOzCQ9a
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/gborne/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/gborne
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/gborne/snap/code/102
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 18)
+LIBFT = libft/libft.a
+# makefile (from 'Makefile', line 21)
+CC = gcc
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = gborne
+# environment
+SNAP_REVISION = 102
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 13)
+NAME = minishell
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 23)
+LFLAGS = $(LIBFT) $(READLINE) -lreadline
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-6784179e-1.69.2-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = VHFf8TePw7D-eNjMJVLogRDuezLLseTj_wENSrDqfgMb5NOzCQ9a
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 16)
+TXT_NORMAL = tput sgr0
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+VSCODE_PID = 2103
+# variable set hash-table stats:
+# Load=126/1024=12%, Rehash=0, Collisions=19/155=12%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src/cmd (device 66312, inode 1050439): 14 files, no impossibilities.
+# src/main.c (device 66312, inode 1057461): could not be opened.
+# . (device 66312, inode 1050499): 16 files, no impossibilities.
+# src/utils.c (device 66312, inode 1057465): could not be opened.
+# src/utils.o (device 66312, inode 1050381): could not be opened.
+# src/history.c (device 66312, inode 1057458): could not be opened.
+# src/init.c (device 66312, inode 1057459): could not be opened.
+# src/main.o (device 66312, inode 1050372): could not be opened.
+# src/init.o (device 66312, inode 1050371): could not be opened.
+# src/signals.c (device 66312, inode 1057464): could not be opened.
+# src (device 66312, inode 1057448): 15 files, no impossibilities.
+# src/exec (device 66312, inode 1181628): 8 files, no impossibilities.
+# src/parser (device 66312, inode 1050458): 10 files, no impossibilities.
+# src/signals.o (device 66312, inode 1050376): could not be opened.
+# src/history.o (device 66312, inode 1050379): could not be opened.
+
+# 63 files, no impossibilities in 15 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+src/parser/lexique_pipe.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:11.515033441
+#  File has been updated.
+#  Successfully updated.
+
+all: minishell
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all init_libft run leaks clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/exec/builtin.o: src/exec/builtin.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/exec/builtin'
+#  Last modified 2022-07-27 23:31:08.594402366
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/parser/lexique_arg.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:03.487061379
+#  File has been updated.
+#  Successfully updated.
+
+src/main.o: src/main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main'
+#  Last modified 2022-07-27 23:31:38.642404486
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+ 
+# Not a target:
+src/cmd/env.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:41.330934317
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/cmd/exit.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:44.282924888
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/exec/bin.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:14:19.910445117
+#  File has been updated.
+#  Successfully updated.
+
+src/history.o: src/history.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/history'
+#  Last modified 2022-07-27 23:31:08.138402335
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:32:37.982408945
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-25 12:31:15.029966646
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/exec/exec.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:05:00.614519401
+#  File has been updated.
+#  Successfully updated.
+
+src/utils.o: src/utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/utils'
+#  Last modified 2022-07-27 23:31:08.170402337
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/cmd/pwd.o: src/cmd/pwd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/pwd'
+#  Last modified 2022-07-27 23:31:08.458402357
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+minishell: src/init.o src/main.o src/signals.o src/history.o src/utils.o src/parser/parser.o src/parser/lexique_pipe.o src/parser/lexique_arg.o src/parser/lexique_var.o src/cmd/echo.o src/cmd/exit.o src/cmd/env.o src/cmd/export.o src/cmd/pwd.o src/cmd/cd.o src/exec/exec.o src/exec/builtin.o src/exec/bin.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-27 23:31:38.682404489
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 37):
+	@make -C libft
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS)
+	@echo -e '\033[1mmake success\033[0m'
+
+src/cmd/cd.o: src/cmd/cd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/cd'
+#  Last modified 2022-07-27 23:31:08.526402362
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@make fclean -C libft
+	@rm -f minishell
+	@echo -e '\033[1mfclean success\033[0m'
+
+# Not a target:
+src/exec/builtin.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:27.242980258
+#  File has been updated.
+#  Successfully updated.
+
+src/parser/parser.o: src/parser/parser.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/parser/parser'
+#  Last modified 2022-07-27 23:31:08.206402339
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/signals.o: src/signals.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/signals'
+#  Last modified 2022-07-27 23:31:08.098402331
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:31:37.098404375
+#  File has been updated.
+#  Successfully updated.
+
+leaks: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 45):
+	$(VALGRIND) ./$(NAME)
+
+src/cmd/echo.o: src/cmd/echo.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/echo'
+#  Last modified 2022-07-27 23:31:08.35840235
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/parser/lexique_var.o: src/parser/lexique_var.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/parser/lexique_var'
+#  Last modified 2022-07-27 23:31:08.322402348
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/cmd/export.o: src/cmd/export.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/export'
+#  Last modified 2022-07-27 23:31:08.494402359
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/init.o: src/init.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/init'
+#  Last modified 2022-07-27 23:31:08.014402327
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/history.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-25 12:31:15.029966646
+#  File has been updated.
+#  Successfully updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 58):
+	@make re -C libft
+	@echo -e '\033[1mreboot success\033[0m'
+
+run: all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	./$(NAME)
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 48):
+	@make clean -C libft
+	@rm -f src/*.o src/*/*.o
+	@echo -e '\033[1mclean success\033[0m'
+
+src/parser/lexique_pipe.o: src/parser/lexique_pipe.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/parser/lexique_pipe'
+#  Last modified 2022-07-27 23:31:08.242402342
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/cmd/pwd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:57.698882884
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/cmd/cd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:31.342966726
+#  File has been updated.
+#  Successfully updated.
+
+src/parser/lexique_arg.o: src/parser/lexique_arg.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/parser/lexique_arg'
+#  Last modified 2022-07-27 23:31:08.282402345
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/parser/parser.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:21.147000632
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/signals.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:25:45.034386673
+#  File has been updated.
+#  Successfully updated.
+
+src/cmd/env.o: src/cmd/env.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/env'
+#  Last modified 2022-07-27 23:31:08.426402354
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/cmd/echo.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:10:28.422526834
+#  File has been updated.
+#  Successfully updated.
+
+src/cmd/exit.o: src/cmd/exit.c
+ 
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/cmd/exit'
+#  Last modified 2022-07-27 23:31:08.390402353
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+init_libft:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+src/exec/bin.o: src/exec/bin.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/exec/bin'
+#  Last modified 2022-07-27 23:31:08.630402369
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/cmd/export.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 15:20:50.962903799
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/init.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-26 14:38:56.72529049
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/parser/lexique_var.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-27 23:23:14.526385668
+#  File has been updated.
+#  Successfully updated.
+
+src/exec/exec.o: src/exec/exec.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/exec/exec'
+#  Last modified 2022-07-27 23:31:08.562402365
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# files hash-table stats:
+# Load=48/1024=5%, Rehash=0, Collisions=9/145=6%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 126 / storage = 1444 B / avg = 11 B
+# current buf: size = 8162 B / used = 1444 B / count = 126 / avg = 11 B
+
+# strcache performance: lookups = 189 / hit rate = 33%
+# hash-table stats:
+# Load=126/8192=2%, Rehash=0, Collisions=6/189=3%
+# Finished Make data base on Wed Jul 27 23:34:53 2022
+
+ 

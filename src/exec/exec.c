@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 21:25:19 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 23:05:00 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void process(pid_t pid, t_data *data, int *fd, int fd_tmp)
 	}
 }
 
-static void	exec_pipe(t_data *data)
+static void	exec_pipe(t_data *data, int status)
 {
 	pid_t	pid;
 	int		fd[2];
@@ -71,8 +71,11 @@ static void	exec_pipe(t_data *data)
 				;*/
 	while (wait(&wstatus) > 0)
 	{
-		free(data->pipeline_status);
-		data->pipeline_status = ft_itoa(WEXITSTATUS(wstatus));
+		if (status)
+		{
+			free(data->pipeline_status);
+			data->pipeline_status = ft_itoa(WEXITSTATUS(wstatus));
+		}
 	}
 }
 
@@ -81,13 +84,13 @@ static void	exec_solo(t_cmd *cmd)
 	if (is_builtin(cmd))
 		builtin(cmd);
 	else
-		exec_pipe(cmd->data);
+		exec_pipe(cmd->data, 0);
 }
 
 int	exec(t_data *data)
 {
 	if (data->cmds->next)
-		exec_pipe(data);
+		exec_pipe(data, 1);
 	else
 		if (data->cmds->content)
 			exec_solo(data->cmds->content);

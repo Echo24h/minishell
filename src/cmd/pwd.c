@@ -6,21 +6,24 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:50:08 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 15:20:57 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/27 23:57:35 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-void	pwd(t_cmd *cmd)
+char    *pwd(int ret)
 {
-	int	i;
+    char    cwd[1024];
+    char    *path;
 
-	i = -1;
-	while (cmd->data->envp[++i])
-		if (!ft_strncmp(cmd->data->envp[i], "PWD=", 4))
-		{
-			write(1, cmd->data->envp[i], ft_strlen(cmd->data->envp[i]));
-			write(1, "\n", 1);
-		}
+    getcwd(cwd, sizeof(cwd));
+    if (!ret)
+        printf("%s\n", cwd);
+    else
+    {
+        path = cwd;
+        return (path);
+    }
+    return (NULL);
 }

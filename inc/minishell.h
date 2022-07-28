@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/26 14:38:33 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/28 03:43:28 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 # include "readline/history.h"
 # include <sys/wait.h>
 
+// Linux opendir()
+#include <dirent.h>
+
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
@@ -37,6 +40,8 @@ typedef struct s_data
 	t_list	*cmds;
 	char	**export;
 	char	**envp;
+	char	*oldpwd_exp;
+	char	*oldpwd_env;
 	char	*pipeline_status;
 }			t_data;
 
@@ -101,9 +106,18 @@ int		builtin(t_cmd *cmd);
 void    ft_exit(void);
 void	echo(t_cmd *cmd);
 void	env(t_cmd *cmd);
-void	pwd(t_cmd *cmd);
+char	*pwd(int ret);
 void	export(t_cmd *cmd);
 void	cd(t_cmd *cmd);
+int		unset(t_cmd *cmd);
+
+int		do_not_replace(char *s, char *s2);
+int		my_strcmp(char *s1, char *s2);
+int		srch_line(char *haystack, char *needle);
+char	*insert_quotes_exp(const char *s1, char *s2);
+void	handle_exp_cd(t_cmd *cmd);
+char	*cd_pwd(int envp);
+void	handle_env_cd(t_cmd *cmd);
 
 
 #endif
