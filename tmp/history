@@ -314,3 +314,162 @@ env
 export
 ls
 git add *
+git commot -m "unset KO"
+git commit -m "unset KO"
+git push
+ls
+cd ..
+ls
+export TEST
+unset TEST
+export TEST
+unset TEST
+export TEST
+unset TEST
+export TEST
+unset TEST
+export TEST
+unset TEST
+export TEST
+unset TEST
+pwd
+export
+ls
+env
+export TEST
+env
+unset TEST
+env
+export TEST
+env
+env | grep TEST
+export | grep TEST
+unset TEST
+export | grep TEST
+export
+ls
+export
+ls
+env
+export TEST=
+export
+env
+unset TEST
+env
+export
+make
+make re
+export
+ls
+export TEST=10
+ls
+export
+unset TEST
+export
+env
+export TEST=10
+unset TEST
+export TEST
+unset TEST
+export TEST
+unset TEST
+export TEST=10
+unset TEST
+export
+export | TEST
+export | grep TEST
+env | grep TEST
+grep
+ls
+ls
+env
+ls
+env
+env
+env
+export TEST
+ls
+export
+cd ..
+export TEST
+export
+export TEST
+export TY
+export
+env
+export
+unset TY
+export
+export TEST=
+export
+export TEST=10
+export
+export TEST
+export
+ls
+export TEST
+export
+unset TEST
+export
+unset TEST
+export TEST=10
+unset TEST
+export
+export
+export TEST=10
+export
+unset TEST
+export TEST
+export
+unset TEST
+export
+unset TEST
+unset TEST
+unset TEST
+unset TEST
+export
+ls
+export TEST
+unset TEST
+export TEST
+unset TEST
+make
+unset
+export TEST
+unset TEST
+export TEST
+unset TEST
+export
+export TEST=10
+export
+env
+unset TEST
+env | grep TEST
+env
+export
+export TEST
+unset TEST
+export
+export TEST
+unset TEST
+export
+env
+ls
+dfsfds
+unset TESt TEST
+export TEST1=10
+export TEST=
+export TES2T=
+export TEST3
+export
+unset TEST3
+export
+env
+export
+env
+export
+env
+export
+env
+env | grep TEST
+export

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/28 03:32:07 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/28 05:51:26 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,10 @@ void	add_exp_line(t_cmd *cmd)
 
 	i = -1;
 	tmp = NULL;
+	arg_cpy = ft_strjoin2("declare -x ", insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
 	while (cmd->data->export[++i])
-		if (do_not_replace(cmd->data->export[i], cmd->arg[1]))
+		if (ft_strncmp(cmd->data->export[i], arg_cpy, ft_strlen(arg_cpy)) != 0 && ft_strlen(arg_cpy) > ft_strlen("declare -x "))
 			tmp = ft_strjoin_2(tmp, cmd->data->export[i]);
-	arg_cpy = ft_strjoin2("declare -x ",
-			insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
 	tmp = ft_strjoin_2(tmp, arg_cpy);
 	free(arg_cpy);
 	free_tab(cmd->data->export);
