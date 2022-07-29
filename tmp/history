@@ -473,3 +473,49 @@ export
 env
 env | grep TEST
 export
+ls
+cd ..
+export TEST=10
+export
+export TEST
+export
+export TEST
+env
+export
+export TEST=11
+export
+env | TEST
+env | grep TEST
+export TEST=12
+export
+export
+export TEST
+export test
+make
+export test
+export TEST
+export TEST
+export TEST
+export TEST=10
+export TEST
+export TEST=12
+make
+export TEST=12
+export
+export | grep TEST
+export TEST
+export | grep TEST
+export TEST=
+export | grep TEST
+export TEST
+export | grep TEST
+export TEST=10
+export | grep TEST
+export TEST=
+export | grep TEST
+env
+export TEST
+env
+export TEST=1
+env
+export

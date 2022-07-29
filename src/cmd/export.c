@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/28 05:51:26 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/29 17:31:15 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,51 @@ char	*insert_quotes_exp(const char *s1, char *s2)
 	return (s2);
 }
 
+static int	arg_is_diff(const char *cpy, const char *arg)
+{
+	int	i;
+
+	i = 0;
+	while (cpy[i])
+	{
+		if (arg[i] == '\0' && cpy[i] != '=')
+			return (1);
+		if (cpy[i] == '=')
+			if (arg[i] == '=' || arg[i] == '\0')
+				return (0);
+		if (cpy[i] != '=' && arg[i] == '=')
+			return (1);
+		if (cpy[i] != arg[i])
+			return (1);
+		i++;
+	}
+	if (arg[i] == '=')
+		return(2);
+	else if (arg[i] == '\0')
+		return (0);
+	return (1);
+}
+
 void	add_exp_line(t_cmd *cmd)
 {
 	int		i;
+	int		add;
 	char	*tmp;
 	char	*arg_cpy;
 
 	i = -1;
 	tmp = NULL;
+	add = 1;
 	arg_cpy = ft_strjoin2("declare -x ", insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
 	while (cmd->data->export[++i])
-		if (ft_strncmp(cmd->data->export[i], arg_cpy, ft_strlen(arg_cpy)) != 0 && ft_strlen(arg_cpy) > ft_strlen("declare -x "))
+	{
+		if (arg_is_diff(arg_cpy, cmd->data->export[i]) == 2)
+			add = 0;
+		if (arg_is_diff(arg_cpy, cmd->data->export[i]))
 			tmp = ft_strjoin_2(tmp, cmd->data->export[i]);
-	tmp = ft_strjoin_2(tmp, arg_cpy);
+	}
+	if (add)
+		tmp = ft_strjoin_2(tmp, arg_cpy);
 	free(arg_cpy);
 	free_tab(cmd->data->export);
 	cmd->data->export = ft_split(tmp, '\n');
