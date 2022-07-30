@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 17:38:02 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 22:42:01 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,15 @@ static void	exec_solo(t_cmd *cmd)
 
 int	exec(t_data *data)
 {
-	if (data->cmds->next)
-		exec_pipe(data, 1);
+	if (data->cmds)
+	{
+		if (data->cmds->next)
+			exec_pipe(data, 1);
+		else
+			if (data->cmds->content)
+				exec_solo(data->cmds->content);
+	}
 	else
-		if (data->cmds->content)
-			exec_solo(data->cmds->content);
+		write(1, "Error : wrong input\n", 21);
 	return (0);
 }

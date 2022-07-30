@@ -1,0 +1,1208 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Jul 30 21:15:26 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 20)
+OBJ = $(SRC:.c=.o)
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 19)
+SRC = $(wildcard src/*.c)
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/gborne/Bureau/minishell/libft
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/102
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"8e1a08857df44efaeace20a1f4372f40.fr","_translationsConfigFile":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/tcf.json","_cacheRoot":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr","_resolvedLanguagePackCoreLocation":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/home/gborne/.config/Code/clp/8e1a08857df44efaeace20a1f4372f40.fr/corrupted.info","_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:42780
+# makefile (from 'Makefile', line 16)
+CFLAGS = -Wall -Wextra -Werror
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = gborne
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+_ = /snap/code/102/usr/share/code/code
+# environment
+MANAGERPID = 1363
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/gborne
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/gborne/.local/bin:/home/gborne/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/gborne-Lenovo-Y520-15IKBN:@/tmp/.ICE-unix/1611,unix/gborne-Lenovo-Y520-15IKBN:/tmp/.ICE-unix/1611
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/gborne/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/102
+# environment
+SNAP_VERSION = 3b889b09
+# makefile (from 'Makefile', line 17)
+AR = ar rcs
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 5a8d7d45e3e04b37b022944202c679a0
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4694
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/gborne/Bureau/minishell/libft
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1574
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/gborne
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/gborne/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = gborne
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = VHFf8TePw7D-eNjMJVLogRDuezLLseTj_wENSrDqfgMb5NOzCQ9a
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/gborne/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/gborne
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/gborne/snap/code/102
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 15)
+CC = gcc
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = gborne
+# environment
+SNAP_REVISION = 102
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'Makefile', line 13)
+NAME = libft.a
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-6784179e-1.69.2-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = VHFf8TePw7D-eNjMJVLogRDuezLLseTj_wENSrDqfgMb5NOzCQ9a
+# automatic
+<F = $(notdir $<)
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+VSCODE_PID = 4741
+# variable set hash-table stats:
+# Load=121/1024=12%, Rehash=0, Collisions=19/150=13%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66312, inode 1181624): 7 files, no impossibilities.
+# src (device 66312, inode 1181715): 108 files, no impossibilities.
+
+# 115 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+src/ft_memmove.o: src/ft_memmove.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_memmove'
+ 
+#  Last modified 2022-07-30 21:03:48.862050932
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strchr.o: src/ft_strchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strchr'
+#  Last modified 2022-07-30 21:03:48.762050949
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_lstiter.o: src/ft_lstiter.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstiter'
+#  Last modified 2022-07-30 21:03:48.602050979
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_lstnew.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 18:16:39.52378233
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_toupper.o: src/ft_toupper.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_toupper'
+#  Last modified 2022-07-30 21:03:48.370051021
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strnstr.o: src/ft_strnstr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strnstr'
+#  Last modified 2022-07-30 21:03:49.19805087
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_putstr_fd.o: src/ft_putstr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putstr_fd'
+#  Last modified 2022-07-30 21:03:49.386050836
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_putnbr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+all: libft.a
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/get_next_line_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_printf_utils.o: src/ft_printf_utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_printf_utils'
+#  Last modified 2022-07-30 21:03:49.046050898
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/get_next_line.o: src/get_next_line.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/get_next_line'
+#  Last modified 2022-07-30 21:03:48.658050969
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_calloc.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/ft_substr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_sublen.o: src/ft_sublen.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_sublen'
+#  Last modified 2022-07-30 21:03:49.470050821
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_putchar_fd.o: src/ft_putchar_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putchar_fd'
+#  Last modified 2022-07-30 21:03:48.406051014
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_atoi.o: src/ft_atoi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_atoi'
+#  Last modified 2022-07-30 21:03:49.446050825
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_lstsize.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strtrim.o: src/ft_strtrim.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strtrim'
+#  Last modified 2022-07-30 21:03:49.522050811
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_putnbr.o: src/ft_putnbr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putnbr'
+#  Last modified 2022-07-30 21:03:48.990050908
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_lstadd_back.o: src/ft_lstadd_back.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstadd_back'
+#  Last modified 2022-07-30 21:03:48.786050945
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_strjoin2.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:27:25.206448722
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strlcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_putendl_fd.o: src/ft_putendl_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putendl_fd'
+#  Last modified 2022-07-30 21:03:48.710050959
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strmapi.o: src/ft_strmapi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strmapi'
+#  Last modified 2022-07-30 21:03:48.630050974
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:36:52.57434537
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strncmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_isalnum.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+libft.a: src/ft_itoa.o src/ft_toupper.o src/ft_putchar_fd.o src/ft_subdup.o src/ft_strcmp.o src/ft_lstmap.o src/ft_memset.o src/ft_calloc.o src/ft_lstadd_front.o src/ft_lstiter.o src/ft_strmapi.o src/get_next_line.o src/ft_strjoin2.o src/ft_putendl_fd.o src/ft_strlcat.o src/ft_strchr.o src/ft_lstadd_back.o src/ft_lstlast.o src/ft_memcpy.o src/ft_memmove.o src/ft_striteri.o src/ft_strlcpy.o src/ft_putnbr_fd.o src/ft_strrchr.o src/ft_putnbr.o src/ft_lstdelone.o src/ft_printf_utils.o src/ft_strlen.o src/ft_strdup.o src/ft_substr.o src/ft_isdigit.o src/ft_isalpha.o src/ft_strnstr.o src/ft_split.o src/ft_printf.o src/ft_strjoin.o src/ft_memcmp.o src/ft_lstclear.o src/ft_lstsize.o src/ft_putstr_fd.o src/ft_isalnum.o src/ft_atoi.o src/ft_sublen.o src/ft_lstnew.o src/ft_strtrim.o src/ft_tolower.o src/ft_memchr.o src/get_next_line_utils.o src/ft_putchar.o src/ft_isprint.o src/ft_strncmp.o src/ft_bzero.o src/ft_isascii.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-30 21:03:49.734050773
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 28):
+	@$(AR) $@ $(OBJ)
+	@echo -e '\033[1mmake libft success\033[0m'
+
+# Not a target:
+src/ft_strcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:27:41.550445743
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstadd_front.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_memcpy.o: src/ft_memcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_memcpy'
+#  Last modified 2022-07-30 21:03:48.838050936
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_itoa.o: src/ft_itoa.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_itoa'
+#  Last modified 2022-07-30 21:03:48.342051026
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_strdup.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:21:32.530512977
+ 
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstdelone.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 21:15:26.142375366
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_memcmp.o: src/ft_memcmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_memcmp'
+#  Last modified 2022-07-30 21:03:49.31005085
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strlen.o: src/ft_strlen.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strlen'
+#  Last modified 2022-07-30 21:03:49.070050893
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_memmove.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_isdigit.o: src/ft_isdigit.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_isdigit'
+#  Last modified 2022-07-30 21:03:49.14605088
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_strchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_lstlast.o: src/ft_lstlast.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstlast'
+#  Last modified 2022-07-30 21:03:48.810050941
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_memchr.o: src/ft_memchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_memchr'
+#  Last modified 2022-07-30 21:03:49.574050802
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_toupper.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_memset.o: src/ft_memset.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_memset'
+#  Last modified 2022-07-30 21:03:48.526050992
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_strnstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_putstr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_tolower.o: src/ft_tolower.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_tolower'
+#  Last modified 2022-07-30 21:03:49.546050807
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strrchr.o: src/ft_strrchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strrchr'
+#  Last modified 2022-07-30 21:03:48.966050913
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_printf_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/get_next_line.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strjoin.o: src/ft_strjoin.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strjoin'
+#  Last modified 2022-07-30 21:03:49.282050855
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_split.o: src/ft_split.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_split'
+#  Last modified 2022-07-30 21:03:49.226050865
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	@rm -f $(NAME)
+	@echo -e '\033[1mfclean libft success\033[0m'
+
+src/ft_lstclear.o: src/ft_lstclear.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstclear'
+#  Last modified 2022-07-30 21:03:49.334050845
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_printf.o: src/ft_printf.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_printf'
+#  Last modified 2022-07-30 21:03:49.25405086
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_sublen.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_putchar_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strlcat.o: src/ft_strlcat.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strlcat'
+#  Last modified 2022-07-30 21:03:48.738050954
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstmap.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_subdup.o: src/ft_subdup.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_subdup'
+#  Last modified 2022-07-30 21:03:48.434051009
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_strtrim.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_bzero.o: src/ft_bzero.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_bzero'
+#  Last modified 2022-07-30 21:03:49.702050779
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_putnbr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:25:46.206466757
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_isprint.o: src/ft_isprint.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_isprint'
+#  Last modified 2022-07-30 21:03:49.650050788
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_isascii.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstadd_back.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/ft_isalpha.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_putendl_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strmapi.c:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstiter.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_striteri.o: src/ft_striteri.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_striteri'
+#  Last modified 2022-07-30 21:03:48.890050926
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_isascii.o: src/ft_isascii.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_isascii'
+#  Last modified 2022-07-30 21:03:49.726050774
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_putchar.o: src/ft_putchar.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putchar'
+#  Last modified 2022-07-30 21:03:49.626050792
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 40):
+	@echo -e '\033[1mreboot libft success\033[0m'
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 32):
+	@rm -f src/*.o
+	@echo -e '\033[1mclean libft success\033[0m'
+
+# Not a target:
+src/ft_memcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_lstnew.o: src/ft_lstnew.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstnew'
+#  Last modified 2022-07-30 21:03:49.498050815
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_itoa.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_memcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_isdigit.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstlast.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_memchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_putnbr_fd.o: src/ft_putnbr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_putnbr_fd'
+#  Last modified 2022-07-30 21:03:48.938050917
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_memset.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/get_next_line_utils.o: src/get_next_line_utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/get_next_line_utils'
+#  Last modified 2022-07-30 21:03:49.602050796
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_calloc.o: src/ft_calloc.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_calloc'
+#  Last modified 2022-07-30 21:03:48.550050988
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_substr.o: src/ft_substr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_substr'
+#  Last modified 2022-07-30 21:03:49.122050884
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_tolower.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strrchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strjoin.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_split.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_lstclear.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_printf.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_isalpha.o: src/ft_isalpha.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_isalpha'
+#  Last modified 2022-07-30 21:03:49.174050874
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_lstsize.o: src/ft_lstsize.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstsize'
+#  Last modified 2022-07-30 21:03:49.358050841
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_striteri.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_strlcat.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/ft_subdup.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-30 20:21:45.926510536
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strjoin2.o: src/ft_strjoin2.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strjoin2'
+#  Last modified 2022-07-30 21:03:48.686050963
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_bzero.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strlcpy.o: src/ft_strlcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strlcpy'
+#  Last modified 2022-07-30 21:03:48.914050922
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_isprint.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_lstmap.o: src/ft_lstmap.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstmap'
+#  Last modified 2022-07-30 21:03:48.498050998
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+ 
+src/ft_strncmp.o: src/ft_strncmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strncmp'
+#  Last modified 2022-07-30 21:03:49.674050783
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_isalnum.o: src/ft_isalnum.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_isalnum'
+#  Last modified 2022-07-30 21:03:49.41805083
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_strcmp.o: src/ft_strcmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strcmp'
+#  Last modified 2022-07-30 21:03:48.466051004
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_lstadd_front.o: src/ft_lstadd_front.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstadd_front'
+#  Last modified 2022-07-30 21:03:48.578050983
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# Not a target:
+src/ft_putchar.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-29 16:51:44.273977883
+#  File has been updated.
+#  Successfully updated.
+
+src/ft_strdup.o: src/ft_strdup.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_strdup'
+#  Last modified 2022-07-30 21:03:49.094050889
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+src/ft_lstdelone.o: src/ft_lstdelone.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/ft_lstdelone'
+#  Last modified 2022-07-30 21:03:49.018050903
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	@$(CC) $(CFLAGS) -o $@ -c $<
+
+# files hash-table stats:
+# Load=115/1024=11%, Rehash=0, Collisions=28/347=8%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 283 / storage = 4174 B / avg = 14 B
+# current buf: size = 8162 B / used = 4174 B / count = 283 / avg = 14 B
+
+# strcache performance: lookups = 359 / hit rate = 21%
+# hash-table stats:
+# Load=283/8192=3%, Rehash=0, Collisions=15/359=4%
+# Finished Make data base on Sat Jul 30 21:15:26 2022
+
+ 

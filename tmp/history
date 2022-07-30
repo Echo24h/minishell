@@ -1057,3 +1057,175 @@ echo $USER"     " $PWD "      "'"$PATH"''     '--
 echo "l  s" "cat" "cat"    "test"  "ech "" "" o"" " "  test"  " t " """   "t"  "y    y"    "y   y"   "  d  s qdjnsq,dlmqskdqs  md q"""" "", ",n " kj   n"k"ij"ilj "lk"ij"ij,"l,"lk "l," lk"l   k   "  o ko pmkmlkkml"kl"ml"mk"mlk 'zdsfsfsfsdfsd' fdsfdsfsdf"'"'"'"'"fdsfksdfsd'''"aodqsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,kqd,qls'rf f;aéakr"zr' t sdfqsod"'"
 echo test1 "test2" 'test3' "test'4'" 'test"5"'
 echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+export TEST
+export TEST1=
+export TEST2=10
+unset TEST
+export
+env
+export TEST
+export TEST1=
+export TEST2=10
+export
+env
+unset TEST
+export TEST
+unset TEST
+export TEST
+export TEST
+unset TEST
+unset TEST
+export TEST
+export TEST=10
+export TEST=10
+export TEST
+export TEST
+export TEST=10
+unset TEST
+unset TEST
+export TEST=10
+unset TEST
+unset TEST
+export TEST=10
+unset TEST
+export TEST=10
+unset TEST
+export TEST=10
+export
+unset TEST
+export
+export
+export TEST
+unset TEST
+unset -
+echo "|" |  
+echo "|" |  
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat
+cat valgrind_readline.supp 
+echo test
+echo test | test
+make leaks
+cat | cat | ls
+ls
+ls
+echo test
+echo test| test
+echo test
+echo "|" |  
+make leaks
+make leaks
+echo "|" |  
+echo test | test
+cat | cat | ls
+cat | cat | ls
+echo test
+ls
+ls
+export TEST
+ls
+cd ..
+echo test
+cd ..
+cat | cat | ls
+echo test | test
+echo test |
+echo test |
+echo test | 
+echo test |
+echo test |
+echo test | 
+echo test |
+echo test |
+echo test | 
+echo test | 
+echo test |
+echo test | 
+echo |
+|
+$
+ls
+ls
+<
+<
+>
+ |
+|
+|
+|
+|
+|
+|
+|
+|
+ls
+ls
+ls
+l
+sl
+ls
+ls
+l
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+ls
+ls
+cd ..
+echo test
+ls
+echo test
+echo test
+echo test
+cat | cat | ls
+cat | cat | ls
+|
+ls
+ls
+export TEST
+export TEST1=10
+export TEST2=10
+export
+unset TEST TEST1
+export
+unset TEST TEST1
+export
+unset TEST TEST1
+export
+unset
+unset
+unset TEST
+export
+export TEST 
+export TEST=10
+export TEST1=10
+export TEST2=10
+unset TEST T TEST1
+unset T
+export
+unset TEST1
+unset TEST1 T
+unset TEST1 T TEST2
+unset TEST1 T TEST2 TEST3
+export
+export TEST=10
+export TEST1=10
+unset TEST1 T TEST2
+unset TEST1 T TEST2
+export T
+export A T
+export A T Y U
+export A TEST=10 Y U
+export A TEST=10 Y U=20
+export A TEST=10 Y U=20
+export TEST1=10
+export A TEST=10 Y U=20
+export TEST1=10
+unset TEST1 T TEST2
+unset TEST1 T TEST2
+unset TEST1 T TEST2

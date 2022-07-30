@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/30 20:42:08 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 22:01:10 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	init(t_data *data, char **envp);
 void	free_tab(char **tab);
 // free t_list **cmds
 void	free_cmds(t_data *data);
+void	free_cmd(void *content);
 // free all of t_data *data
 void	free_data(t_data *data);
 // exec.c

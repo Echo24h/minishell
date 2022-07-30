@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 00:31:56 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 21:14:32 by gborne           ###   ########.fr       */
+/*   Created: 2022/07/30 22:49:00 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/30 22:52:41 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/minishell.h"
+#include "../inc/libft.h"
 
-void	env(t_cmd *cmd)
+int	ft_tablen(char **tab)
 {
 	int	i;
 
-	i = -1;
-	while (cmd->data->envp[++i])
-		printf("%s\n", cmd->data->envp[i]);
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
 }

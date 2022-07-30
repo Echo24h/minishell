@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 18:20:11 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 22:47:28 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*get_cmd(char *cmd_line)
 	return (cmd);
 }
 
-static void	*cmd_init(const char *cmd_line, t_data *data)
+static t_cmd	*cmd_init(const char *cmd_line, t_data *data)
 {
 	t_cmd	*cmd;
 
@@ -48,21 +48,32 @@ static void	*cmd_init(const char *cmd_line, t_data *data)
 	cmd->arg = get_arg(data, cmd_line);
 	cmd->cmd = get_cmd(cmd->arg[0]);
 	cmd->data = data;
-	return ((void *)cmd);
+	return (cmd);
 }
 
 void	parse_cmds(const char *input, t_data *data)
 {
 	t_list	*cmds;
+	t_cmd	*tmp;
 	char	**cmd_tab;
 	int		i;
 
 	cmd_tab = lexique_pipe(input);
 	i = -1;
 	cmds = NULL;
-	while (cmd_tab[++i])
-		ft_lstadd_back(&cmds, ft_lstnew(cmd_init(cmd_tab[i], data)));
-	free_tab(cmd_tab);
+	tmp = NULL;
+	while (cmd_tab && cmd_tab[++i])
+	{
+		if (!(cmd_tab[i][0] == '\0'
+			|| (cmd_tab[i][0] == ' ' && cmd_tab[i][1] == '\0')))
+		{
+			tmp = cmd_init(cmd_tab[i], data);
+			if (tmp)
+				ft_lstadd_back(&cmds, ft_lstnew((void *)tmp));
+		}
+	}
+	if (cmd_tab)
+		free_tab(cmd_tab);
 	data->cmds = cmds;
 	data->first_cmd = cmds;
 }

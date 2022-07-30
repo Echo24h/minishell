@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:17:20 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 20:27:56 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 22:52:32 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+int				ft_tablen(char **tab);
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);

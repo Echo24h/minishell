@@ -1,0 +1,59 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/gborne/Bureau/minishell/libft'
+gcc -Wall -Wextra -Werror -o src/ft_itoa.o -c src/ft_itoa.c
+gcc -Wall -Wextra -Werror -o src/ft_toupper.o -c src/ft_toupper.c
+gcc -Wall -Wextra -Werror -o src/ft_putchar_fd.o -c src/ft_putchar_fd.c
+gcc -Wall -Wextra -Werror -o src/ft_subdup.o -c src/ft_subdup.c
+gcc -Wall -Wextra -Werror -o src/ft_strcmp.o -c src/ft_strcmp.c
+gcc -Wall -Wextra -Werror -o src/ft_lstmap.o -c src/ft_lstmap.c
+gcc -Wall -Wextra -Werror -o src/ft_memset.o -c src/ft_memset.c
+gcc -Wall -Wextra -Werror -o src/ft_calloc.o -c src/ft_calloc.c
+gcc -Wall -Wextra -Werror -o src/ft_lstadd_front.o -c src/ft_lstadd_front.c
+gcc -Wall -Wextra -Werror -o src/ft_lstiter.o -c src/ft_lstiter.c
+gcc -Wall -Wextra -Werror -o src/ft_strmapi.o -c src/ft_strmapi.c
+gcc -Wall -Wextra -Werror -o src/get_next_line.o -c src/get_next_line.c
+gcc -Wall -Wextra -Werror -o src/ft_strjoin2.o -c src/ft_strjoin2.c
+gcc -Wall -Wextra -Werror -o src/ft_putendl_fd.o -c src/ft_putendl_fd.c
+gcc -Wall -Wextra -Werror -o src/ft_strlcat.o -c src/ft_strlcat.c
+gcc -Wall -Wextra -Werror -o src/ft_strchr.o -c src/ft_strchr.c
+gcc -Wall -Wextra -Werror -o src/ft_lstadd_back.o -c src/ft_lstadd_back.c
+gcc -Wall -Wextra -Werror -o src/ft_lstlast.o -c src/ft_lstlast.c
+gcc -Wall -Wextra -Werror -o src/ft_memcpy.o -c src/ft_memcpy.c
+gcc -Wall -Wextra -Werror -o src/ft_memmove.o -c src/ft_memmove.c
+gcc -Wall -Wextra -Werror -o src/ft_striteri.o -c src/ft_striteri.c
+gcc -Wall -Wextra -Werror -o src/ft_strlcpy.o -c src/ft_strlcpy.c
+gcc -Wall -Wextra -Werror -o src/ft_putnbr_fd.o -c src/ft_putnbr_fd.c
+gcc -Wall -Wextra -Werror -o src/ft_strrchr.o -c src/ft_strrchr.c
+gcc -Wall -Wextra -Werror -o src/ft_putnbr.o -c src/ft_putnbr.c
+gcc -Wall -Wextra -Werror -o src/ft_lstdelone.o -c src/ft_lstdelone.c
+gcc -Wall -Wextra -Werror -o src/ft_printf_utils.o -c src/ft_printf_utils.c
+gcc -Wall -Wextra -Werror -o src/ft_strlen.o -c src/ft_strlen.c
+gcc -Wall -Wextra -Werror -o src/ft_strdup.o -c src/ft_strdup.c
+gcc -Wall -Wextra -Werror -o src/ft_substr.o -c src/ft_substr.c
+gcc -Wall -Wextra -Werror -o src/ft_isdigit.o -c src/ft_isdigit.c
+gcc -Wall -Wextra -Werror -o src/ft_isalpha.o -c src/ft_isalpha.c
+gcc -Wall -Wextra -Werror -o src/ft_strnstr.o -c src/ft_strnstr.c
+gcc -Wall -Wextra -Werror -o src/ft_split.o -c src/ft_split.c
+gcc -Wall -Wextra -Werror -o src/ft_printf.o -c src/ft_printf.c
+gcc -Wall -Wextra -Werror -o src/ft_strjoin.o -c src/ft_strjoin.c
+gcc -Wall -Wextra -Werror -o src/ft_memcmp.o -c src/ft_memcmp.c
+gcc -Wall -Wextra -Werror -o src/ft_lstclear.o -c src/ft_lstclear.c
+gcc -Wall -Wextra -Werror -o src/ft_lstsize.o -c src/ft_lstsize.c
+gcc -Wall -Wextra -Werror -o src/ft_putstr_fd.o -c src/ft_putstr_fd.c
+gcc -Wall -Wextra -Werror -o src/ft_isalnum.o -c src/ft_isalnum.c
+gcc -Wall -Wextra -Werror -o src/ft_atoi.o -c src/ft_atoi.c
+gcc -Wall -Wextra -Werror -o src/ft_sublen.o -c src/ft_sublen.c
+gcc -Wall -Wextra -Werror -o src/ft_lstnew.o -c src/ft_lstnew.c
+gcc -Wall -Wextra -Werror -o src/ft_strtrim.o -c src/ft_strtrim.c
+gcc -Wall -Wextra -Werror -o src/ft_tolower.o -c src/ft_tolower.c
+gcc -Wall -Wextra -Werror -o src/ft_memchr.o -c src/ft_memchr.c
+gcc -Wall -Wextra -Werror -o src/get_next_line_utils.o -c src/get_next_line_utils.c
+gcc -Wall -Wextra -Werror -o src/ft_putchar.o -c src/ft_putchar.c
+gcc -Wall -Wextra -Werror -o src/ft_isprint.o -c src/ft_isprint.c
+gcc -Wall -Wextra -Werror -o src/ft_strncmp.o -c src/ft_strncmp.c
+gcc -Wall -Wextra -Werror -o src/ft_bzero.o -c src/ft_bzero.c
+gcc -Wall -Wextra -Werror -o src/ft_isascii.o -c src/ft_isascii.c
+ar rcs libft.a src/ft_memset.o src/ft_strjoin2.o src/ft_lstlast.o src/ft_isdigit.o src/ft_strlen.o src/ft_memcmp.o src/ft_lstsize.o src/ft_itoa.o src/ft_memcpy.o src/get_next_line_utils.o src/ft_putnbr_fd.o src/ft_substr.o src/ft_calloc.o src/ft_lstiter.o src/ft_strmapi.o src/ft_putendl_fd.o src/ft_bzero.o src/ft_lstadd_back.o src/ft_split.o src/ft_atoi.o src/ft_strtrim.o src/get_next_line.o src/ft_isascii.o src/ft_putchar_fd.o src/ft_strlcat.o src/ft_putchar.o src/ft_striteri.o src/ft_printf_utils.o src/ft_isalpha.o src/ft_lstnew.o src/ft_putstr_fd.o src/ft_strnstr.o src/ft_isprint.o src/ft_memmove.o src/ft_toupper.o src/ft_subdup.o src/ft_lstmap.o src/ft_putnbr.o src/ft_strchr.o src/ft_lstdelone.o src/ft_strdup.o src/ft_lstadd_front.o src/ft_printf.o src/ft_lstclear.o src/ft_strjoin.o src/ft_strcmp.o src/ft_strrchr.o src/ft_isalnum.o src/ft_strlcpy.o src/ft_sublen.o src/ft_memchr.o src/ft_tolower.o src/ft_strncmp.o
+echo -e '\033[1mmake libft success\033[0m'
+make: Leaving directory '/home/gborne/Bureau/minishell/libft'
+ 
