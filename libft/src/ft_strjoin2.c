@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbastard <mbastard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 18:34:28 by mbastard          #+#    #+#             */
-/*   Updated: 2022/06/12 19:11:53 by mbastard         ###   ########.fr       */
+/*   Updated: 2022/07/30 19:20:24 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin2(char *s1, char *s2, int clean_s1, int clean_s2)
 	return (dst);
 }
 // #include <stdio.h>
-char *ft_strjoin_2(const char *s1, const char *s2)
+char *ft_strjoin_2(char *s1, const char *s2)
 {
 	int i = 0;
 	int j = 0;
@@ -77,5 +77,33 @@ char *ft_strjoin_2(const char *s1, const char *s2)
 	}
 	new[j++] = '\n';
 	new[j] = 0;
+	free(s1);
+	return (new);
+}
+
+char *ft_strjoin_3(char *s1, char *s2)
+{
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	char *new;
+
+	new = malloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2);
+	if (!new)
+		return (NULL);
+	if (s1)
+	{
+		while (s1[i])
+			new[j++] = s1[i++];
+	}
+	if (s2)
+	{
+		while(s2[k])
+			new[j++] = s2[k++];
+	}
+	new[j++] = '\n';
+	new[j] = 0;
+	free(s1);
+	free(s2);
 	return (new);
 }

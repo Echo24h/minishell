@@ -936,3 +936,88 @@ ls
 ls
 ls
 ls
+ls
+ls
+export $TEST
+export $TEST
+ls
+cd .
+ls
+cd tmp
+cd valgrind_readline.supp 
+ls
+ls
+ls
+cat valgrind_readline.supp 
+ls
+ls
+ls | ls | ls
+export TEST
+export TEST
+export TEST
+export TEST=10
+export TEST2=
+export TEST3=20
+env
+env
+export TEST3=20
+export TEST2=
+export TEST=10
+export TEST=10
+export TEST2=
+export TEST2=
+export TEST=10
+export TEST3=20
+export TEST=10
+export TEST3=20
+export TEST=10
+export TEST2=
+export TEST2=
+export TEST2=
+export TEST3=20
+export TEST2=
+export TEST2=
+export TEST3=20
+export TEST2=
+export TEST3=20
+export TEST3=20
+export TEST2=
+expor $1
+export $1
+env
+env
+env
+ls
+env
+env
+expor $1
+env
+export $1
+env
+export TEST2=
+env
+export TEST2=
+env
+ls
+export
+export TEST2=
+export
+env
+env
+export TE=1
+env
+env
+export TE=1
+env
+ls
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+env
+cd ..

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 01:03:58 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 16:06:20 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 19:45:27 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	handle_env_cd(t_cmd *cmd)
 	cpy = cmd->data->envp;
 	while (cpy[++i])
 		if (ft_strncmp(cpy[i], "PWD=", 4) == 0)
-			tmp = ft_strjoin_2(tmp, ft_strjoin_2("OLD", cpy[i]));
+			tmp = ft_strjoin_3(tmp, ft_strjoin2("OLD", cpy[i], 0, 0));
 	i = -1;
 	while (cpy[++i])
 		if (ft_strncmp(cpy[i], "PWD=", 4) != 0 && ft_strncmp(cpy[i], "OLDPWD=", 7) != 0)
 			tmp = ft_strjoin_2(tmp, cpy[i]);
-	tmp = ft_strjoin_2(tmp, cd_pwd(1));
+	tmp = ft_strjoin_3(tmp, cd_pwd(1));
 	free_tab(cmd->data->envp);
 	cmd->data->envp = ft_split(tmp, '\n');
 	free(tmp);
@@ -66,20 +66,26 @@ char	*handle_cd_dollar(t_cmd *cmd)
 
 void	cd_suite(t_cmd *cmd, char *path)
 {
+	DIR *dir;
+
 	if (cmd->arg[1][0] == '$')
 		path = handle_cd_dollar(cmd);
 	else
 		path = ft_strdup(cmd->arg[1]);
-	if (opendir(path) != NULL)
+	dir = opendir(path);
+	if (dir != NULL)
 	{
 		chdir(path);
 		handle_exp_cd(cmd);
 		handle_env_cd(cmd);
+		free(dir);
 	}
 	else if (!access(path, R_OK))
 		printf("%s: Not a directory\n", path);
 	else
 		printf("%s: No such file or directory\n", path);
+	if (path)
+		free(path);
 }
 
 void	cd(t_cmd *cmd)
@@ -90,10 +96,10 @@ void	cd(t_cmd *cmd)
 	if (cmd->arg[1] == NULL || cmd->arg[1][0] == '~')
 	{
 		path = search_logname(cmd);
-		path = ft_strjoin2("/Users/", path, 0, 0);
+		path = ft_strjoin2("/Users/", path, 0, 1);
 		chdir(path);
+		free(path);
 	}
 	else
 		cd_suite(cmd, path);
-	free(path);
 }

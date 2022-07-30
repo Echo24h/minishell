@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/30 18:19:18 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 18:40:02 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	export(t_cmd *cmd);
 void	cd(t_cmd *cmd);
 int		unset(t_cmd *cmd);
 
-int		do_not_replace(char *s, char *s2);
+int		do_not_replace(const char *s, const char *s2);
 int		my_strcmp(char *s1, char *s2);
 char	*insert_quotes_exp(const char *s1, char *s2);
 void	handle_exp_cd(t_cmd *cmd);

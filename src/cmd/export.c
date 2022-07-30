@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 16:04:44 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 18:56:32 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	add_exp_line(t_cmd *cmd)
 	char	*arg_cpy;
 
 	i = -1;
-	tmp = NULL;
+	tmp = (char *)ft_calloc(1, sizeof(char));
 	add = 1;
 	arg_cpy = ft_strjoin2("declare -x ",
 						insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
@@ -111,6 +111,7 @@ void	add_exp_line(t_cmd *cmd)
 	free(arg_cpy);
 	free_tab(cmd->data->export);
 	cmd->data->export = ft_split(tmp, '\n');
+	free(tmp);
 }
 
 void	add_env_line(t_cmd *cmd)
@@ -119,13 +120,14 @@ void	add_env_line(t_cmd *cmd)
 	char	*tmp;
 
 	i = -1;
-	tmp = NULL;
+	tmp = (char *)ft_calloc(1, sizeof(char));
 	while (cmd->data->envp[++i])
 		if (do_not_replace(cmd->data->envp[i], cmd->arg[1]))
 		tmp = ft_strjoin_2(tmp, cmd->data->envp[i]);
 	tmp = ft_strjoin_2(tmp, cmd->arg[1]);
 	free_tab(cmd->data->envp);
 	cmd->data->envp = ft_split(tmp, '\n');
+	free(tmp);
 }
 
 void	export(t_cmd *cmd)
