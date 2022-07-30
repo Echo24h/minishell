@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/29 17:31:15 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 16:04:44 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ char	*insert_quotes_exp(const char *s1, char *s2)
 	if (j)
 		s2[k++] = '"';
 	s2[k] = '\0';
-	//printf("%s\n %s\n", s1, s2);
 	return (s2);
 }
 
@@ -82,7 +81,7 @@ static int	arg_is_diff(const char *cpy, const char *arg)
 		i++;
 	}
 	if (arg[i] == '=')
-		return(2);
+		return (2);
 	else if (arg[i] == '\0')
 		return (0);
 	return (1);
@@ -98,7 +97,8 @@ void	add_exp_line(t_cmd *cmd)
 	i = -1;
 	tmp = NULL;
 	add = 1;
-	arg_cpy = ft_strjoin2("declare -x ", insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
+	arg_cpy = ft_strjoin2("declare -x ",
+						insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
 	while (cmd->data->export[++i])
 	{
 		if (arg_is_diff(arg_cpy, cmd->data->export[i]) == 2)

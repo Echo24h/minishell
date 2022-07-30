@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/28 03:43:28 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 16:50:25 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,25 +54,41 @@ typedef struct s_cmd
 	t_data	*data;
 }			t_cmd;
 
-//		main.c functions
+//		init.c
 
-void	clear_data(t_data *data);
-void	quit(char *error_message, int error_code, int clean);
-
-// init export et envp
+//init essential data at start
 void	init(t_data *data, char **envp);
+
+//	free.c
+
+// free char **
+void	free_tab(char **tab);
+// free t_list **cmds
+void	free_cmds(t_data *data);
+// free all of t_data *data
+void	free_data(t_data *data);
+// exec.c
+
+//		history.c
 
 // manage history and add (input) to the history file
 void	manage_history(char *cmd);
 
-//		parser.c functions
+//		parser.c
 
 // Parse the (input) and build the command list in (data)
-void	parser(char *input, t_data *data);
+void	parse_cmds(const char *input, t_data *data);
 // Read the cmd line and thransform them for the parsing
 char	*lexique_var(t_data *data, const char *cmd_line);
+int		id_var(t_data *data, const char *var);
 // Read the input and parse arg (space, simple quote and double quotes)
 char	**lexique_arg(const char *input);
+// Read the input and parse quote
+char	*subquote(char *str, char c);
+char	get_revquote(const char quote);
+// Add the string 'add' in existant **args or create this, and return the new '**args'
+char	**add_arg(char **args, char *add);
+
 // Read the input and parse pipe
 char	**lexique_pipe(const char *input);
 
@@ -81,22 +97,12 @@ char	**lexique_pipe(const char *input);
 // Manage CTRL + C, CTRL + Z, ...
 void	signal_controller(int signal);
 
-//	utils.c
-
-void	free_tab(char **tab);
-
 // exec.c
 
 // While(t_list *cmds) in data, execute command
 int		exec(t_data *data);
-
-//bin.c
-
 // Use execve() for execute bin command
 void	bin(t_cmd *cmd);
-
-// builtin.c
-
 // Return (1) if cmd->cmd is builtin, else return (0)
 int		is_builtin(t_cmd *cmd);
 // Execute buitin command
@@ -113,7 +119,6 @@ int		unset(t_cmd *cmd);
 
 int		do_not_replace(char *s, char *s2);
 int		my_strcmp(char *s1, char *s2);
-int		srch_line(char *haystack, char *needle);
 char	*insert_quotes_exp(const char *s1, char *s2);
 void	handle_exp_cd(t_cmd *cmd);
 char	*cd_pwd(int envp);

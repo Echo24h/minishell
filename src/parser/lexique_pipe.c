@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:17:07 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 15:20:11 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 16:00:00 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ int	cmd_count(char const *s, int simplequote, int doublequote)
 			i++;
 		if (s[i] != '|' && s[i])
 			words++;
-		while (s[i] &&
-			( s[i] != '|' || simplequote % 2 == 1 || doublequote % 2 == 1))
+		while (s[i]
+			&& (s[i] != '|' || simplequote % 2 == 1 || doublequote % 2 == 1))
 		{
-			  //MANAGE QUOTES
 			if (doublequote % 2 == 0 && s[i] == '\'')
 				simplequote++;
 			else if (simplequote % 2 == 0 && s[i] == '\"')
@@ -43,12 +42,14 @@ char	*split_part(char const *s)
 {
 	int		i;
 	char	*cmd;
+	int		simplequote;
+	int		doublequote;
 
-	int simplequote = 0;
-	int doublequote = 0;
+	simplequote = 0;
+	doublequote = 0;
 	i = 0;
-	while (s[i] &&
-	( s[i] != '|' || simplequote % 2 == 1 || doublequote % 2 == 1))
+	while (s[i]
+		&& (s[i] != '|' || simplequote % 2 == 1 || doublequote % 2 == 1))
 	{
 		if (doublequote % 2 == 0 && s[i] == '\'')
 			simplequote++;
@@ -72,9 +73,9 @@ static char	**split_pipe(char const *s)
 	if (!s)
 		return (NULL);
 	len = cmd_count(s, 0, 0);
-	cmd_tab = malloc(sizeof(char *) * (len + 1));
-	if (!cmd_tab)
+	if (len <= 0)
 		return (NULL);
+	cmd_tab = (char **)ft_calloc((len + 1), sizeof(char *));
 	i = -1;
 	while (++i < len)
 	{
@@ -94,7 +95,6 @@ static char	**split_pipe(char const *s)
 
 char	**lexique_pipe(const char *input)
 {
-
 	char	**cmd_tab;
 
 	cmd_tab = split_pipe(input);

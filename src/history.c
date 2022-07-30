@@ -6,23 +6,19 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:21 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/21 05:11:56 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/29 19:00:04 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-/**
- * @brief recover history from the history file
- * 
- * @param fd history file descriptor
- */
+//recover history from the history file
 static void	recover_history(int fd)
 {
 	size_t	i;
 	char	*cmd;
 	char	*cmds;
-    
+
 	i = -1;
 	cmds = NULL;
 	cmd = get_next_line(fd);
@@ -47,15 +43,15 @@ static void	recover_history(int fd)
 
 void	manage_history(char *cmd)
 {
-	int			history_fd;
+	int			fd;
 
-	history_fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
+	fd = open("tmp/history", O_RDWR | O_CREAT | O_APPEND, 0777);
 	if (!cmd)
-		recover_history(history_fd);
+		recover_history(fd);
 	else
 	{
 		add_history(cmd);
-		ft_putendl_fd(cmd, history_fd);
+		ft_putendl_fd(cmd, fd);
 	}
-	close(history_fd);
+	close(fd);
 }

@@ -519,3 +519,379 @@ env
 export TEST=1
 env
 export
+cd ..
+ls
+cd src/
+ls
+cd ..
+ls
+cd ..
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+l
+sl
+ls
+env
+ls
+ls
+ls
+ls
+ls
+./minishell 
+ls
+env
+env
+export
+ls
+ls
+ls
+ls
+ls
+ls
+env
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+echo test
+ls
+ls
+ls
+make
+ls
+ls
+ls
+ls
+ls
+ls
+pwd
+pwd
+ls
+ls
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+ls
+pwd
+pwd
+pwd
+ls
+cd ..
+env
+ls
+pwd
+pwd
+echo ceci est un test
+echo ceci est un test
+echo ceci est un test
+pwd
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+pwd
+pwd
+pwd
+echo test
+ls
+echo test
+cat valgrind_readline.supp 
+ls | ls
+ls
+ls | ls
+ls
+ls | ls
+echo test | echo test
+ls | ls
+echo test | echo test
+echo test | echo test
+echo test | echo test
+echo test
+cd ..
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+pwd
+echo test
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+echo test
+ls
+echo test
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+l
+ls
+ls
+ls
+ls
+ls
+ls
+cat | cat | ls
+echot est
+echo test
+ls
+echo $
+echo $ 
+echo $t
+export $
+export $t
+export
+export $t
+export $tt
+export $tttt
+export $TEST
+export
+ls
+echo $t
+echo $TEST
+echo $USER
+echo $TEST
+env
+export
+export TEST
+echo $TEST
+echo $TES
+echo $TE
+echo $
+echo -n $TEST
+echo -n ceci
+echo -n  ceci
+echo -n  " ceci"
+echo test
+echo $
+echo $T
+echo $TEST
+echo $USER
+echo " test"
+echo " $TES"
+echo -n  " ceci"
+echo -n  " ceci"
+echo -n  " ceci"
+echo -n  " ceci"
+echo -n  " ceci"
+echo -n  " ceci"
+echo -n  " ceci"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+make
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+ls
+ls
+echo test
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+make
+./minishell 
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+make
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr" t
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+ls
+cd ..
+ls
+echo test
+echo test | echo test
+ls
+norminette src/parser/lexique_pipe.
+norminette src/parser/lexique_pipe.c
+ehco $TEST
+echo $HOME
+echo $
+echo $T
+echo $USS
+echo $USER
+echo $HOME
+ls
+ls
+ls
+echo $
+echo $T
+echo $TEST
+echo $HOME
+echo $HOME
+echo $HOME
+echo $HOME " "
+echo $HOME " "
+echo $HOME " "
+echo $HOME " "
+echo $HOME " "
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo $HOME " "
+echo $HOME " " $USER
+norminette src/parser/lexique_var.c
+norminette src/parser/lexique_var.c
+norminette src/parser/lexique_var.c
+norminette src/parser/lexique_var.c
+norminette src/parser/lexique_var.c
+norminette src/parser/lexique_var.c
+ls
+ls
+ls
+echo $TEST
+echo $HOME
+echo $TEST
+echo $TEST
+echo $
+echo $TEST
+echo $USER
+echo $TEST
+echo $TEST
+echo $TEST
+echo $USER
+echo $USER
+echo "ceci est un test"
+echo "ceci est un test"
+echo "ceci est un test"
+echo $HOME
+ls
+ls
+ls
+grep test
+echo test | echo test
+ls
+ls
+ls
+ls
+ls
+echo test
+echo test
+echo testt
+echo testt
+echo testt
+echo testt
+echo testt
+echo coucou
+echo coucou
+echo test
+echo "ceci est un test"
+echo "ceci est un test"
+ /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-qiuzhcfq.0ud 
+echo 
+echo test
+echo test
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+echo test
+echo test
+echo test
+echo "test"
+echo $TEST
+echo $HOME
+ls
+ls
+echo test
+echo test
+exot
+exit
+echo test
+echo $HOME
+echo $P
+echo $?
+echo $TEST
+ls
+cd ..
+ls
+cat valgrind_readline.supp 

@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:17:20 by gborne            #+#    #+#             */
-/*   Updated: 2022/04/15 18:48:37 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 16:09:25 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char			*s2;
+	char	*s2;
 
 	s2 = (char *)ft_calloc(ft_strlen(s1) + 1, sizeof(char));
 	if (!s2)

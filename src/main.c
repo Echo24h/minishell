@@ -6,28 +6,14 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 23:31:37 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 17:43:11 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-static void	clear_cmd(void *content)
-{
-	t_cmd	*cmd;
-
-	cmd = (t_cmd *)content;
-	free(cmd->cmd);
-	free_tab(cmd->arg);
-}
-
-void	clear_data(t_data *data)
-{
-	ft_lstclear(&data->cmds, &clear_cmd);
-	free(data->cmds);
-}
-
-int	error_quotes(const char *input)
+// check quotes and return (0) if is valid or return (1)
+int	check_quotes(const char *input)
 {
 	int	simplequote;
 	int	doublequote;
@@ -48,9 +34,33 @@ int	error_quotes(const char *input)
 	return (0);
 }
 
-int	main(int argc, char **argv, char **envp)
+void	minishell(t_data *data)
 {
 	char	*input;
+
+	input = readline(PROMPT);
+	if (!input)
+	{
+		free_data(data);
+		ft_exit();
+	}
+	else if (ft_strlen(input))
+	{
+		if (check_quotes(input))
+			write(1, "Error : wrong quotes\n", 22);
+		else
+		{
+			manage_history(input);
+			parse_cmds(input, data);
+			exec(data);
+			free_cmds(data);
+		}
+	}
+	free(input);
+}
+
+int	main(int argc, char **argv, char **envp)
+{
 	t_data	data;
 
 	(void)argv;
@@ -59,22 +69,6 @@ int	main(int argc, char **argv, char **envp)
 	manage_history(NULL);
 	signal(SIGINT, &signal_controller);
 	while (1)
-	{
-		input = readline(PROMPT);
-		if (!input)
-			ft_exit();
-		else if (ft_strlen(input))
-		{
-			if (error_quotes(input))
-				write(1, "Error : wrong quotes\n", 22);
-			else
-			{
-				manage_history(input);
-				parser(input, &data);
-				exec(&data);
-				clear_data(&data);
-			}
-		}
-	}
+		minishell(&data);
 	return (0);
 }

@@ -1,0 +1,111 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   temp                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/30 13:53:19 by gborne           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../inc/minishell.h"
+
+static void	add_doublequote(char **args, const char *line, int *i)
+{
+	int	quote;
+	int	revquote;
+
+	printf("i=%d i_tmp=%d\n", i[1], i[0]);
+	while(line[i[0]] == ' ')
+		i[0] = i[0] + 1;
+	quote = 1;
+	revquote = 0;
+	i[1] = i[1] + 1;
+	while (line[i[1]])
+	{
+		//printf("i=%d quote=%d\n", i, quote);
+		if (quote % 2 == 0 && line[i[1]] == '\'')
+			revquote++;
+		else if (revquote % 2 == 0 && line[i[1]] == '\"')
+			quote++;
+		else if (line[i[1]] == ' ' && quote % 2 == 0 && revquote % 2 == 0)
+			break;
+		i[1] = i[1] + 1;
+	}
+	args = add_arg(args, subquote(ft_substr(line, i[0], i[1] - i[0]), '"'));
+	i[0] = i[1] + 1;
+	printf("i=%d i_tmp=%d\n", i[1], i[0]);
+}
+
+char	**get_arg(const char *line)
+{
+	int		i[0];
+	char	**args;
+	int	quote;
+	int	revquote;
+
+	args = NULL;
+	i[1] = 0;
+	i[0] = 0;
+	while(line[i[1]])
+	{
+		if (line[i[1]] == '\"')
+			add_doublequote(args, line, i);
+		// MANAGE SIMPLE QUOTE
+
+		else if (line[i[1]] == '\'')
+		{
+			while(line[i[0]] == ' ')
+				i[0] = i[0] + 1;
+			quote = 1;
+			revquote = 0;
+			i[1] = i[1] + 1;
+			while (line[i[1]])
+			{
+				if (quote % 2 == 0 && line[i[1]] == '\"')
+					revquote++;
+				else if (revquote % 2 == 0 && line[i[1]] == '\'')
+					quote++;
+				else if (line[i[1]] == ' ' && quote % 2 == 0  && revquote % 2 == 0)
+					break;
+				i[1] = i[1] + 1;
+			}
+			args = add_arg(args, subquote(ft_substr(line, i[0], i[1] - i[0]), '\''));
+			i[0] = i[1] + 1;
+		}
+		// MANAGE SPACE
+
+		else if (line[i[1]] == ' ' && i[1] != i[0] && !ft_strchr("\' \"", line[i[1] - 1]))
+		{
+			while(line[i[0]] == ' ')
+				i[0] = i[0] + 1;
+			args = add_arg(args, ft_substr(line, i[0], i[1] - i[0]));
+			while(line[i[1]] == ' ')
+				i[1] = i[1] + 1;
+			i[0] = i[1];
+			i[1] = i[1] - 1;
+		}
+		i[1] = i[1] + 1;
+	}
+
+	// END OF line
+	if (i[1] != i[0] && !ft_strchr("\' \"", line[i[1] - 1]))
+		args = add_arg(args, ft_substr(line, i[0], i[1] - i[0]));
+	return (args);
+}
+
+char	**lexique_arg(const char *line)
+{
+    char **arg;
+
+	arg = get_arg(line);
+
+	/*
+	int i = -1;
+	while(arg[++i])
+		printf("arg[%d]={%s}\n",i, arg[i]);
+	exit(0);*/
+    return (arg);
+}

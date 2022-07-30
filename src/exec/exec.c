@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:37:16 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/27 23:05:00 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 17:38:02 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	exec_cmd(t_cmd *cmd)
 	}
 }
 
-static void process(pid_t pid, t_data *data, int *fd, int fd_tmp)
+static void	process(pid_t pid, t_data *data, int *fd, int fd_tmp)
 {
 	if (pid == 0)
 	{
@@ -67,8 +67,6 @@ static void	exec_pipe(t_data *data, int status)
 	}
 	close(fd_tmp);
 	wstatus = 0;
-	/*while (waitpid(0, &wstatus, 0) > 0)
-				;*/
 	while (wait(&wstatus) > 0)
 	{
 		if (status)
@@ -94,6 +92,5 @@ int	exec(t_data *data)
 	else
 		if (data->cmds->content)
 			exec_solo(data->cmds->content);
-	//printf("status=%s\n", data->pipeline_status);
 	return (0);
 }

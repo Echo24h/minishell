@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/28 01:51:47 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 11:48:06 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ void	echo(t_cmd *cmd)
 	int		i;
 	int		newline;
 
-	i = 0;
+	i = 1;
 	newline = 1;
-	if (ft_strcmp(cmd->arg[++i], "-n") == 0)
+	if (cmd->arg[i] && ft_strcmp(cmd->arg[i], "-n") == 0)
+	{
 		newline = 0;
+		i++;
+	}
 	if (cmd->arg[i])
 	{
 		str = ft_strdup(cmd->arg[i]);

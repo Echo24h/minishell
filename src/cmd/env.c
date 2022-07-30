@@ -6,17 +6,17 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/28 03:31:04 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 16:06:42 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-void    env(t_cmd *cmd)
+void	env(t_cmd *cmd)
 {
-    int    i;
+	int	i;
 
-    i = -1;
-    while (cmd->data->envp[++i])
-        printf("%s\n", cmd->data->envp[i]);
+	i = -1;
+	while (cmd->data->envp[++i])
+		printf("%s\n", cmd->data->envp[i]);
 }

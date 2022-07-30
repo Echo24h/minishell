@@ -5,48 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 04:08:10 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/28 03:32:05 by gborne           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../../inc/minishell.h"
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cd.c                                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hvincent <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 01:03:58 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/23 01:03:59 by hvincent         ###   ########.fr       */
+/*   Updated: 2022/07/30 16:06:20 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-void    handle_env_cd(t_cmd *cmd)
+void	handle_env_cd(t_cmd *cmd)
 {
-    int        i;
-    char    *tmp;
-    char    **cpy;
+	int		i;
+	char	*tmp;
+	char	**cpy;
 
-    i = -1;
-	//cmd->data->envp;
-    tmp = NULL;
+	i = -1;
+	tmp = NULL;
 	cpy = cmd->data->envp;
 	while (cpy[++i])
 		if (ft_strncmp(cpy[i], "PWD=", 4) == 0)
 			tmp = ft_strjoin_2(tmp, ft_strjoin_2("OLD", cpy[i]));
-    i = -1;
+	i = -1;
 	while (cpy[++i])
 		if (ft_strncmp(cpy[i], "PWD=", 4) != 0 && ft_strncmp(cpy[i], "OLDPWD=", 7) != 0)
 			tmp = ft_strjoin_2(tmp, cpy[i]);
-    tmp = ft_strjoin_2(tmp, cd_pwd(1));
-    free_tab(cmd->data->envp);
-    cmd->data->envp = ft_split(tmp, '\n');
-    free(tmp);
+	tmp = ft_strjoin_2(tmp, cd_pwd(1));
+	free_tab(cmd->data->envp);
+	cmd->data->envp = ft_split(tmp, '\n');
+	free(tmp);
 }
 
 char	*search_logname(t_cmd *cmd)

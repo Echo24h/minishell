@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 21:39:53 by mbastard          #+#    #+#             */
-/*   Updated: 2022/04/15 17:55:33 by gborne           ###   ########.fr       */
+/*   Created: 2022/07/30 12:52:38 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/30 17:35:05 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,28 @@ void	free_tab(char **tab)
 		free(tab[i]);
 	free(tab[i]);
 	free(tab);
+}
+
+void	free_cmd(void *content)
+{
+	t_cmd	*cmd;
+
+	cmd = (t_cmd *)content;
+	free(cmd->cmd);
+	free_tab(cmd->arg);
+	free(cmd);
+}
+
+void	free_cmds(t_data *data)
+{
+	ft_lstclear(&data->cmds, &free_cmd);
+	free(data->cmds);
+}
+
+void	free_data(t_data *data)
+{
+	free_cmds(data);
+	free(data->pipeline_status);
+	free_tab(data->envp);
+	free_tab(data->export);
 }

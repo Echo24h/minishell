@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signals.c                                          :+:      :+:    :+:   */
+/*   lexique_var_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 02:50:52 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 16:03:46 by gborne           ###   ########.fr       */
+/*   Created: 2022/07/30 15:49:57 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/30 15:52:36 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minishell.h"
+#include "../../inc/minishell.h"
 
-static void	control_c()
+int	id_var(t_data *data, const char *var)
 {
-	write(1, "\n", 1);
-	rl_redisplay();
-	rl_replace_line("", 0);
-	rl_redisplay();
-	write(1, PROMPT, ft_strlen(PROMPT));
-}
+	int		len;
+	int		i;
+	char	*export_var;
 
-void	signal_controller(int signal)
-{
-	if (signal == SIGINT)
-		control_c();
+	export_var = ft_strdup("declare -x ");
+	export_var = ft_strjoin(export_var, var);
+	len = ft_strlen(export_var);
+	i = -1;
+	while (data->export[++i])
+	{
+		if (ft_strncmp(data->export[i], export_var, len) == 0)
+		{
+			free(export_var);
+			return (i);
+		}
+	}
+	free(export_var);
+	return (-1);
 }
