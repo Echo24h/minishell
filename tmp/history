@@ -895,3 +895,44 @@ ls
 cd ..
 ls
 cat valgrind_readline.supp 
+ls
+ls
+cd ..
+echo test
+exit
+ls
+ls
+exit
+ls
+ls
+ls
+exit
+ls
+ls
+ls
+ls
+ls
+echo test
+exit
+ls
+env
+env
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls

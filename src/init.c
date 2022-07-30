@@ -28,4 +28,5 @@ void	init(t_data *data, char **envp)
 	init_env(data, envp);
 	data->pipeline_status = ft_itoa(0);
 	data->cmds = NULL;
+	data->first_cmd = NULL;
 }

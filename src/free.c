@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:52:38 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 17:35:05 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 18:25:05 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	free_cmd(void *content)
 
 void	free_cmds(t_data *data)
 {
+	data->cmds = data->first_cmd;
+	data->first_cmd = NULL;
 	ft_lstclear(&data->cmds, &free_cmd);
 	free(data->cmds);
 }

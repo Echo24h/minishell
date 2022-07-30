@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/30 16:50:25 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 18:19:18 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 typedef struct s_data
 {
 	t_list	*cmds;
+	t_list	*first_cmd;
 	char	**export;
 	char	**envp;
 	char	*oldpwd_exp;

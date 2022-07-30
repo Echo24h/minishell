@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 17:41:13 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 18:20:11 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ void	parse_cmds(const char *input, t_data *data)
 		ft_lstadd_back(&cmds, ft_lstnew(cmd_init(cmd_tab[i], data)));
 	free_tab(cmd_tab);
 	data->cmds = cmds;
+	data->first_cmd = cmds;
 }
