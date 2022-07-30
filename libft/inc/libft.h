@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 18:17:20 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 19:27:25 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:27:56 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int nb);
 int				ft_atoi(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int 			ft_strcmp(const char *str1, const char *str2);
+int				ft_strcmp(const char *str1, const char *str2);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 unsigned long	ft_strlen(const char *s);

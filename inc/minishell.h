@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/30 18:40:02 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:42:08 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,13 @@
 # include <sys/wait.h>
 
 // Linux opendir()
-#include <dirent.h>
+# include <dirent.h>
 
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
 # define CYELLOW "\001\e[1;32m\002"
 # define RESET   "\001\e[0m\002"
-
-# define PROMPT CYELLOW "minishell$ " RESET
 
 typedef struct s_data
 {
@@ -87,7 +85,8 @@ char	**lexique_arg(const char *input);
 // Read the input and parse quote
 char	*subquote(char *str, char c);
 char	get_revquote(const char quote);
-// Add the string 'add' in existant **args or create this, and return the new '**args'
+// Add the string 'add' in existant **args or create this,
+// and return the new '**args'
 char	**add_arg(char **args, char *add);
 
 // Read the input and parse pipe
@@ -110,7 +109,7 @@ int		is_builtin(t_cmd *cmd);
 int		builtin(t_cmd *cmd);
 
 // Builtin
-void    ft_exit(void);
+void	ft_exit(void);
 void	echo(t_cmd *cmd);
 void	env(t_cmd *cmd);
 char	*pwd(int ret);
@@ -118,12 +117,14 @@ void	export(t_cmd *cmd);
 void	cd(t_cmd *cmd);
 int		unset(t_cmd *cmd);
 
+// Builtin function
 int		do_not_replace(const char *s, const char *s2);
 int		my_strcmp(char *s1, char *s2);
 char	*insert_quotes_exp(const char *s1, char *s2);
 void	handle_exp_cd(t_cmd *cmd);
 char	*cd_pwd(int envp);
 void	handle_env_cd(t_cmd *cmd);
-
+int		arg_is_diff(const char *cpy, const char *arg);
+int		check_if_equal(const char *s);
 
 #endif

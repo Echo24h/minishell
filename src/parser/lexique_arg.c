@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:11:56 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 16:17:14 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 21:03:07 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**get_arg(const char *input)
 		else if (input[i[1]] == ' ' && i[1] != i[0]
 			&& !ft_strchr("\' \"", input[i[1] - 1]))
 			args = add_frontspace(args, input, i);
-		if(input[i[1]])
+		if (input[i[1]])
 			i[1]++;
 	}
 	if (i[1] != i[0] && !ft_strchr("\' \"", input[i[1] - 1]))

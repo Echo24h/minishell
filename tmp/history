@@ -1021,3 +1021,39 @@ cd ..
 cd ..
 env
 cd ..
+cd ..
+cd ..
+cd ..
+env
+export TEST
+env
+export
+ls
+cat | cat | ls
+cd ..
+export TEST
+export TEST1=
+export TEST2=10
+export
+echo $?"     " $? "      "'"$?"''     '-- '$?' "'$?'"
+echo echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo test1 "test2" 'test3' "test'4'" 'test"5"'
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"
+echo d q"""" "", ",n " kj   n"k"ij"ilj "lk"ij"ij,"l,"lk "l," lk"l   k   "  o ko pmkmlkkml"kl"ml"mk"mlk 'zdsfsfsfsdfsd' fdsfdsfsdf"'"'"'"'"fdsfksdfsd'''"aodqsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,kqd,qls'rf f;aéakr"zr' t sdfqsod"'"''
+echo "l  s" "cat" "cat"    "test"  "ech "" "" o"" " "  test"  " t " """   "t"  "y    y"    "y   y"   "  d  s qdjnsq,dlmqskdqs  md q"""" "", ",n " kj   n"k"ij"ilj "lk"ij"ij,"l,"lk "l," lk"l   k   "  o ko pmkmlkkml"kl"ml"mk"mlk 'zdsfsfsfsdfsd' fdsfdsfsdf"'"'"'"'"fdsfksdfsd'''"aodqsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,kqd,qls'rf f;aéakr"zr' t sdfqsod"'"
+ls
+echo $?"     " $? "      "'"$?"''     '-- '$?' "'$?'"
+echo echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo $USER"     " $PWD "      "
+'"$PATH"''     '--
+'"$PATH"''     '--
+echo '"$PATH"''     '--
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo $USER"     " $PWD "      "'"$PATH"''     '--
+echo "l  s" "cat" "cat"    "test"  "ech "" "" o"" " "  test"  " t " """   "t"  "y    y"    "y   y"   "  d  s qdjnsq,dlmqskdqs  md q"""" "", ",n " kj   n"k"ij"ilj "lk"ij"ij,"l,"lk "l," lk"l   k   "  o ko pmkmlkkml"kl"ml"mk"mlk 'zdsfsfsfsdfsd' fdsfdsfsdf"'"'"'"'"fdsfksdfsd'''"aodqsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,kqd,qls'rf f;aéakr"zr' t sdfqsod"'"
+echo test1 "test2" 'test3' "test'4'" 'test"5"'
+echo "'"'"'"'"fdsfksdfsd'''"'''aod"'''""''"'"""'qsodksqd"'kdskqdsqdlkqsd' r'zl,kdq,k''qd,qls'rf f;aéakr"

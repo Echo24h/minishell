@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 17:43:11 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:17:24 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	minishell(t_data *data)
 {
 	char	*input;
 
-	input = readline(PROMPT);
+	input = readline(CYELLOW "minishell$ " RESET);
 	if (!input)
 	{
 		free_data(data);

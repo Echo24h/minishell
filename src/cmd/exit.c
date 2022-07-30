@@ -6,16 +6,14 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 05:02:28 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/29 18:19:39 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:19:59 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-
-
-void    ft_exit(void)
+void	ft_exit(void)
 {
-    write(1, "exit\n", 6);
-    exit(0);
+	write(1, "exit\n", 6);
+	exit(0);
 }

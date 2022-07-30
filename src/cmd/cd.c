@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 01:03:58 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 19:45:27 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:19:25 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	handle_env_cd(t_cmd *cmd)
 			tmp = ft_strjoin_3(tmp, ft_strjoin2("OLD", cpy[i], 0, 0));
 	i = -1;
 	while (cpy[++i])
-		if (ft_strncmp(cpy[i], "PWD=", 4) != 0 && ft_strncmp(cpy[i], "OLDPWD=", 7) != 0)
+		if (ft_strncmp(cpy[i], "PWD=", 4) != 0
+			&& ft_strncmp(cpy[i], "OLDPWD=", 7) != 0)
 			tmp = ft_strjoin_2(tmp, cpy[i]);
 	tmp = ft_strjoin_3(tmp, cd_pwd(1));
 	free_tab(cmd->data->envp);
@@ -66,7 +67,7 @@ char	*handle_cd_dollar(t_cmd *cmd)
 
 void	cd_suite(t_cmd *cmd, char *path)
 {
-	DIR *dir;
+	DIR	*dir;
 
 	if (cmd->arg[1][0] == '$')
 		path = handle_cd_dollar(cmd);

@@ -6,11 +6,19 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 11:48:06 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:36:23 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
+
+static int	is_newline(char *arg)
+{
+	if (arg && ft_strcmp(arg, "-n") == 0)
+		return (0);
+	else
+		return (1);
+}
 
 void	echo(t_cmd *cmd)
 {
@@ -19,12 +27,9 @@ void	echo(t_cmd *cmd)
 	int		newline;
 
 	i = 1;
-	newline = 1;
-	if (cmd->arg[i] && ft_strcmp(cmd->arg[i], "-n") == 0)
-	{
-		newline = 0;
+	newline = is_newline(cmd->arg[1]);
+	if (newline == 0)
 		i++;
-	}
 	if (cmd->arg[i])
 	{
 		str = ft_strdup(cmd->arg[i]);

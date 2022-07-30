@@ -6,21 +6,20 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 18:34:28 by mbastard          #+#    #+#             */
-/*   Updated: 2022/07/30 19:20:24 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:27:25 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-
-int ft_strlen_debug(const char *tmp)
+int	ft_strlen_debug(const char *tmp)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (tmp)
 	{
-		while(tmp[i])
+		while (tmp[i])
 			i++;
 	}
 	return (i);
@@ -54,15 +53,19 @@ char	*ft_strjoin2(char *s1, char *s2, int clean_s1, int clean_s2)
 		free(s2);
 	return (dst);
 }
-// #include <stdio.h>
-char *ft_strjoin_2(char *s1, const char *s2)
-{
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	char *new;
 
-	new = malloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2);
+// #include <stdio.h>
+char	*ft_strjoin_2(char *s1, const char *s2)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	*new;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	new = ft_calloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2, 1);
 	if (!new)
 		return (NULL);
 	if (s1)
@@ -72,23 +75,25 @@ char *ft_strjoin_2(char *s1, const char *s2)
 	}
 	if (s2)
 	{
-		while(s2[k])
+		while (s2[k])
 			new[j++] = s2[k++];
 	}
 	new[j++] = '\n';
-	new[j] = 0;
 	free(s1);
 	return (new);
 }
 
-char *ft_strjoin_3(char *s1, char *s2)
+char	*ft_strjoin_3(char *s1, char *s2)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	char *new;
+	int		i;
+	int		j;
+	int		k;
+	char	*new;
 
-	new = malloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2);
+	i = 0;
+	j = 0;
+	k = 0;
+	new = ft_calloc(ft_strlen_debug(s1) + ft_strlen_debug(s2) + 2, 1);
 	if (!new)
 		return (NULL);
 	if (s1)
@@ -98,11 +103,10 @@ char *ft_strjoin_3(char *s1, char *s2)
 	}
 	if (s2)
 	{
-		while(s2[k])
+		while (s2[k])
 			new[j++] = s2[k++];
 	}
 	new[j++] = '\n';
-	new[j] = 0;
 	free(s1);
 	free(s2);
 	return (new);

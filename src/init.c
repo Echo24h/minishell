@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/30 20:28:17 by gborne            #+#    #+#             */
+/*   Updated: 2022/07/30 20:29:03 by gborne           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/minishell.h"
 
 static void	init_env(t_data *data, char **envp)
@@ -15,7 +27,7 @@ static void	init_env(t_data *data, char **envp)
 		if (ft_strncmp(envp[i], "OLDPWD=", 7) != 0)
 		{
 			data->export[i] = ft_strjoin2("declare -x ",
-			insert_quotes_exp(envp[i], NULL), 0, 1);
+					insert_quotes_exp(envp[i], NULL), 0, 1);
 			data->envp[i] = ft_strjoin2("", envp[i], 0, 0);
 		}
 		i++;

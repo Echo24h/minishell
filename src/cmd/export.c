@@ -6,28 +6,18 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 18:56:32 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:47:38 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-int	check_if_equal(const char *s)
+static int	is_quotes(int j)
 {
-	int	i;
-
-	i = -1;
-	if (*s)
-	{
-		while (s[++i])
-		{
-			if (s[i] == '=')
-				return (1);
-			else if (s[i] == '$')
-				return (2);
-		}
-	}
-	return (0);
+	if (j == 1)
+		return (3);
+	else
+		return (1);
 }
 
 char	*insert_quotes_exp(const char *s1, char *s2)
@@ -39,10 +29,7 @@ char	*insert_quotes_exp(const char *s1, char *s2)
 	k = 0;
 	j = check_if_equal(s1);
 	equal = 0;
-	if (j == 1)
-		s2 = malloc(sizeof(char) * (ft_strlen(s1) + 3));
-	else
-		s2 = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	s2 = malloc(sizeof(char) * (ft_strlen(s1) + is_quotes(j)));
 	while (*s1)
 	{
 		if (*s1 == '=' && equal == 0)
@@ -62,31 +49,6 @@ char	*insert_quotes_exp(const char *s1, char *s2)
 	return (s2);
 }
 
-static int	arg_is_diff(const char *cpy, const char *arg)
-{
-	int	i;
-
-	i = 0;
-	while (cpy[i])
-	{
-		if (arg[i] == '\0' && cpy[i] != '=')
-			return (1);
-		if (cpy[i] == '=')
-			if (arg[i] == '=' || arg[i] == '\0')
-				return (0);
-		if (cpy[i] != '=' && arg[i] == '=')
-			return (1);
-		if (cpy[i] != arg[i])
-			return (1);
-		i++;
-	}
-	if (arg[i] == '=')
-		return (2);
-	else if (arg[i] == '\0')
-		return (0);
-	return (1);
-}
-
 void	add_exp_line(t_cmd *cmd)
 {
 	int		i;
@@ -98,7 +60,7 @@ void	add_exp_line(t_cmd *cmd)
 	tmp = (char *)ft_calloc(1, sizeof(char));
 	add = 1;
 	arg_cpy = ft_strjoin2("declare -x ",
-						insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
+			insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
 	while (cmd->data->export[++i])
 	{
 		if (arg_is_diff(arg_cpy, cmd->data->export[i]) == 2)

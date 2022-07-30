@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:56 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 19:45:31 by gborne           ###   ########.fr       */
+/*   Updated: 2022/07/30 20:29:49 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,25 @@ char	*cd_pwd(int envp)
 {
 	char	*tmp;
 	char	*tmpfree;
+	char	*path;
 
 	tmp = NULL;
 	tmpfree = NULL;
+	path = pwd(1);
 	if (!envp)
 	{
-		tmpfree = ft_strjoin2("declare -x PWD=", pwd(1), 0, 0);
+		tmpfree = ft_strdup("declare -x PWD=");
+		if (path)
+			tmpfree = ft_strjoin(tmpfree, path);
 		tmp = insert_quotes_exp(tmpfree, NULL);
 		free(tmpfree);
 	}
 	else if (envp == 1)
-		tmp = ft_strjoin2("PWD=", pwd(1), 0, 0);
+	{
+		tmp = ft_strdup("PWD=");
+		if (path)
+			tmp = ft_strjoin(tmp, path);
+	}
 	return (tmp);
 }
 
@@ -64,7 +72,7 @@ void	handle_exp_cd(t_cmd *cmd)
 	while (cmd->data->envp[++i])
 		if (ft_strncmp(cmd->data->envp[i], "PWD=", 4) == 0)
 			tmp = ft_strjoin_3(tmp, ft_strjoin2("declare -x OLD",
-				insert_quotes_exp(cmd->data->envp[i], NULL), 0, 1));
+						insert_quotes_exp(cmd->data->envp[i], NULL), 0, 1));
 	free_tab(cmd->data->export);
 	cmd->data->export = ft_split(tmp, '\n');
 	free(tmp);
