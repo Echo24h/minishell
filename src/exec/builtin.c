@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 15:53:05 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 19:18:49 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 int	is_builtin(t_cmd *cmd)
 {
-	if (ft_strcmp(cmd->cmd, "echo") == 0 && ft_strlen(cmd->cmd) == 4)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "env") == 0 && ft_strlen(cmd->cmd) == 3)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "pwd") == 0 && ft_strlen(cmd->cmd) == 3)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "export") == 0 && ft_strlen(cmd->cmd) == 6)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "cd") == 0 && ft_strlen(cmd->cmd) == 2)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "exit") == 0 && ft_strlen(cmd->cmd) == 4)
-		return (1);
-	else if (ft_strcmp(cmd->cmd, "unset") == 0 && ft_strlen(cmd->cmd) == 5)
-		return (1);
-	else
-		return (0);
+	if (cmd->cmd)
+	{
+		if (ft_strcmp(cmd->cmd, "echo") == 0 && ft_strlen(cmd->cmd) == 4)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "env") == 0 && ft_strlen(cmd->cmd) == 3)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "pwd") == 0 && ft_strlen(cmd->cmd) == 3)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "export") == 0 && ft_strlen(cmd->cmd) == 6)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "cd") == 0 && ft_strlen(cmd->cmd) == 2)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "exit") == 0 && ft_strlen(cmd->cmd) == 4)
+			return (1);
+		else if (ft_strcmp(cmd->cmd, "unset") == 0 && ft_strlen(cmd->cmd) == 5)
+			return (1);
+	}
+	return (0);
 }
 
 int	builtin(t_cmd *cmd)

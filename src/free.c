@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:52:38 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 22:12:06 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 19:21:52 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ void	free_cmd(void *content)
 	t_cmd	*cmd;
 
 	cmd = (t_cmd *)content;
-	free(cmd->cmd);
-	free_tab(cmd->arg);
-	free(cmd);
+	if (cmd->cmd)
+		free(cmd->cmd);
+	if (cmd->arg)
+		free_tab(cmd->arg);
+	if (cmd)
+		free(cmd);
 }
 
 void	free_cmds(t_data *data)

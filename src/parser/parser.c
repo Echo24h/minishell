@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:03 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 22:47:28 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 19:14:37 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ static t_cmd	*cmd_init(const char *cmd_line, t_data *data)
 
 	cmd = ft_calloc(1, sizeof(t_cmd));
 	cmd->arg = get_arg(data, cmd_line);
-	cmd->cmd = get_cmd(cmd->arg[0]);
+	if (cmd->arg)
+		cmd->cmd = get_cmd(cmd->arg[0]);
 	cmd->data = data;
 	return (cmd);
 }

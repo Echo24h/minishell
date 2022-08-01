@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:17:07 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 22:12:05 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 19:54:10 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,36 @@ static char	**split_pipe(char const *s)
 	return (cmd_tab);
 }
 
+static int	check_pipe(const char *input)
+{
+	int	i;
+
+	i = 0;
+	while (input[i] == ' ' || input[i] == '\t')
+		i++;
+	if (input[i] == '|')
+		return (1);
+	while (input[i])
+	{
+		if (input[i] == '|')
+		{
+			i++;
+			while(input[i] == ' ' || input[i] == '\t')
+				i++;
+			if (input[i] == '|' || input[i] == '\0')
+				return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 char	**lexique_pipe(const char *input)
 {
 	char	**cmd_tab;
 
+	if (check_pipe(input))
+		return (NULL);
 	cmd_tab = split_pipe(input);
 	return (cmd_tab);
 }

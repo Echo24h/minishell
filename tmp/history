@@ -1374,3 +1374,98 @@ echo -nnnnnnnnnnnn test
 echo -nnnnnnnnnnnn- test
 echo -nnnnnnnnnnnn-nnnnnnnnn test
 echo -nnnnnnnnnnnn -nnnnnnnnnnnn test
+/bin/ls
+/bin/ls la
+/bin/ls +la
+/bin/ls -la
+   
+           
+        
+      
+     
+         
+     
+    
+ls
+               *
+ls
+echo ------n
+echo ------n -n
+echo -n ------n -n
+cd ..
+cd ..
+env
+cd ..
+ls | |
+ls |             |
+ls |             
+ls |
+ls |
+""
+" "
+ipoio
+make
+./m
+./minishell 
+|
+|
+|
+|    |
+ls |$
+ls |
+ls |
+| ls
+cat | cat | ls
+cat | cat | ls |
+cat | cat | l|s
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat |||| cat | ls
+ls
+""|""
+"   " 
+opq
+ls
+opdqsdqd
+env
+ls
+dpqsodŝq
+"" | 
+"" | ""
+pwd
+pwd
+cd ..
+unset PATH
+ls
+/bin/ls
+ls
+ 
+ls
+ls
+\bin\ls
+env
+ls
+\bin\ls
+/bin/ls
+unset PATH
+/bin/ls
+ls
+/bin/ls
+/bin/l
+/bin/l
+/bin/l
+/bin/l
+export TEST TEST= TEST=2 TEST=256
+ls
+export
+unset HOME PATH USER
+env
+env | grep HOME
+env | grep HOME
+env | grep HOME
+/bin/env | /bin/grep HOME
+/bin/env | /bin/grep USER
+/bin/env

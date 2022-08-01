@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 16:26:59 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 20:06:36 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	bin(t_cmd *cmd)
 
 	path_list = get_path_list(cmd->data->envp);
 	i = -1;
+	execve(cmd->cmd, cmd->arg, cmd->data->envp);
 	if (path_list == NULL)
 		write(1, "Error : path not found\n", 24);
 	else
 	{
-		execve(cmd->cmd, cmd->arg, cmd->data->envp);
 		while (path_list[++i])
 		{
 			path = ft_strdup(path_list[i]);
@@ -61,9 +61,9 @@ void	bin(t_cmd *cmd)
 			execve(path, cmd->arg, cmd->data->envp);
 			free(path);
 		}
-		write(1, "Error : '", 10);
+		write(1, "Error : ", 9);
 		write(1, cmd->cmd, ft_strlen(cmd->cmd));
-		write(1, "' command not found\n", 21);
+		write(1, " command not found\n", 21);
 		free_tab(path_list);
 	}
 	exit(127);
