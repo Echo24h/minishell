@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 20:36:23 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 19:06:01 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,37 @@
 
 static int	is_newline(char *arg)
 {
-	if (arg && ft_strcmp(arg, "-n") == 0)
-		return (0);
-	else
-		return (1);
+	int	i;
+
+	i = 1;
+	if (arg)
+	{
+		if (arg[0] && arg[0] == '-')
+		{
+			while(arg[i] && arg[i] == 'n')
+			{
+				i++;
+				if (arg[i] == '\0')
+					return (1);
+			}
+		}
+	}
+	return (0);
+}
+
+static int	get_newline(char **arg)
+{
+	int	newline;
+	int	i;
+
+	newline = 0;
+	i = 1;
+	while (is_newline(arg[i]))
+	{
+		newline++;
+		i++;
+	}
+	return (newline);
 }
 
 void	echo(t_cmd *cmd)
@@ -27,9 +54,9 @@ void	echo(t_cmd *cmd)
 	int		newline;
 
 	i = 1;
-	newline = is_newline(cmd->arg[1]);
-	if (newline == 0)
-		i++;
+	newline = get_newline(cmd->arg);
+	if (newline > 0)
+		i += newline;
 	if (cmd->arg[i])
 	{
 		str = ft_strdup(cmd->arg[i]);
@@ -38,12 +65,12 @@ void	echo(t_cmd *cmd)
 			str = ft_strjoin(str, " ");
 			str = ft_strjoin(str, cmd->arg[i]);
 		}
-		if (newline)
+		if (newline == 0)
 			str = ft_strjoin(str, "\n");
 		write(1, str, ft_strlen(str));
 		free(str);
 	}
 	else
-		if (newline)
+		if (newline == 0)
 			write(1, "\n", 2);
 }

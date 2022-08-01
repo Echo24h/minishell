@@ -1350,3 +1350,27 @@ cat | cat | ls
 ls
 ls
 ls
+ls
+ls
+ls
+ls
+ls
+exit
+env
+env
+ls
+env
+env
+env
+ls
+env
+env
+   env
+ls
+                                 echo test
+echo test
+echo -n test
+echo -nnnnnnnnnnnn test
+echo -nnnnnnnnnnnn- test
+echo -nnnnnnnnnnnn-nnnnnnnnn test
+echo -nnnnnnnnnnnn -nnnnnnnnnnnn test

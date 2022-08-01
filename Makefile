@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/27 14:38:38 by gborne            #+#    #+#              #
-#    Updated: 2022/08/01 18:16:40 by gborne           ###   ########.fr        #
+#    Updated: 2022/08/01 18:27:09 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 LFLAGS = $(LIBFT) $(READLINE) -lreadline
 
 # -s --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind_readline.supp
-VALGRIND = valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind_readline.supp
+VALGRIND = valgrind --leak-check=full --suppressions=valgrind_readline.supp
 
 SRC = $(wildcard src/*.c src/*/*.c)
 OBJ = $(SRC:.c=.o)
