@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/27 14:38:38 by gborne            #+#    #+#              #
-#    Updated: 2022/08/01 18:16:40 by gborne           ###   ########.fr        #
+#    Updated: 2022/07/31 00:47:38 by ataverni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ TXT_BOLD = tput bold
 TXT_NORMAL = tput sgr0
 
 LIBFT = libft/libft.a
+#READLINE = -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/include
 READLINE = readline/libreadline.a
-
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-LFLAGS = $(LIBFT) $(READLINE) -lreadline
+LFLAGS = $(LIBFT) $(READLINE) -lreadline -lncurses
 
 # -s --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind_readline.supp
 VALGRIND = valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind_readline.supp
