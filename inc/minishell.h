@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 22:55:12 by mbastard          #+#    #+#             */
-/*   Updated: 2022/08/01 18:03:38 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 02:49:51 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct s_data
 	char	**envp;
 	char	*oldpwd_exp;
 	char	*oldpwd_env;
-	char	*pipeline_status;
 }			t_data;
 
 typedef struct s_cmd
@@ -52,6 +51,10 @@ typedef struct s_cmd
 
 	t_data	*data;
 }			t_cmd;
+
+char	*g_status;
+
+void	rl_replace_line(const char *text, int clear_undo);
 
 //		init.c
 
@@ -97,7 +100,7 @@ char	**lexique_pipe(const char *input);
 
 // Manage CTRL + C, CTRL + Z, ...
 void	signal_controller(int signal);
-
+void	edit_signal(int signal);
 // exec.c
 
 // While(t_list *cmds) in data, execute command
@@ -110,7 +113,7 @@ int		is_builtin(t_cmd *cmd);
 int		builtin(t_cmd *cmd);
 
 // Builtin
-void	ft_exit(void);
+void	ft_exit(t_cmd *cmd);
 void	echo(t_cmd *cmd);
 void	env(t_cmd *cmd);
 char	*pwd(int ret);
@@ -127,5 +130,8 @@ char	*cd_pwd(int envp);
 void	handle_env_cd(t_cmd *cmd);
 int		arg_is_diff(const char *cpy, const char *arg);
 int		check_if_equal(const char *s);
+
+void	add_exp_line(t_cmd *cmd, int x);
+void	add_env_line(t_cmd *cmd, int x);
 
 #endif

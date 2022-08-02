@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 04:18:55 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 16:13:51 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 02:01:12 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static char	*add_var(t_data *data, char *dst, int id_var)
 	i = 0;
 	start = 0;
 	if (id_var == -2)
-		dst = add_part(dst, data->pipeline_status, 0,
-				ft_strlen(data->pipeline_status));
+		dst = add_part(dst, g_status, 0,
+				ft_strlen(g_status));
 	else
 	{
 		while (data->export[id_var][i] && data->export[id_var][i] != '=')

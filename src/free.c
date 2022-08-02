@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 12:52:38 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 19:21:52 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 02:00:23 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	free_cmds(t_data *data)
 void	free_data(t_data *data)
 {
 	free_cmds(data);
-	free(data->pipeline_status);
+	free(g_status);
 	free_tab(data->envp);
 	free_tab(data->export);
 }

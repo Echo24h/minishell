@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 02:51:14 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 18:15:59 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:17:35 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	minishell(t_data *data)
 	if (!input)
 	{
 		free_data(data);
-		ft_exit();
+		ft_exit(NULL);
 	}
 	else if (ft_strlen(input))
 	{
@@ -68,6 +68,7 @@ int	main(int argc, char **argv, char **envp)
 	init(&data, envp);
 	manage_history(NULL);
 	signal(SIGINT, &signal_controller);
+	signal(SIGQUIT, &signal_controller);
 	while (1)
 		minishell(&data);
 	return (0);

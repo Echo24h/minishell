@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/30 20:36:50 by gborne            #+#    #+#              #
-#    Updated: 2022/07/30 20:36:52 by gborne           ###   ########.fr        #
+#    Updated: 2022/08/01 23:50:53 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +26,17 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(AR) $@ $(OBJ)
-	@echo -e '\033[1mmake libft success\033[0m'
+	@echo "\033[1mmake libft success\033[0m"
 
 clean:
 	@rm -f src/*.o
-	@echo -e '\033[1mclean libft success\033[0m'
+	@echo "\033[1mclean libft success\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo -e '\033[1mfclean libft success\033[0m'
+	@echo "\033[1mfclean libft success\033[0m"
 
 re: fclean all
-	@echo -e '\033[1mreboot libft success\033[0m'
+	@echo "\033[1mreboot libft success\033[0m"
 
 .PHONY: all clean fclean re

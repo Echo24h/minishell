@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:17:07 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 19:54:10 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:10:16 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static char	**split_pipe(char const *s)
 	return (cmd_tab);
 }
 
-static int	check_pipe(const char *input)
+static int	check_pipe(const char *input, int simplequote, int doublequote)
 {
 	int	i;
 
@@ -104,10 +104,14 @@ static int	check_pipe(const char *input)
 		return (1);
 	while (input[i])
 	{
-		if (input[i] == '|')
+		if (doublequote % 2 == 0 && input[i] == '\'')
+			simplequote++;
+		else if (simplequote % 2 == 0 && input[i] == '\"')
+			doublequote++;
+		if (input[i] == '|' && (simplequote % 2 == 0 || doublequote % 2 == 0))
 		{
 			i++;
-			while(input[i] == ' ' || input[i] == '\t')
+			while (input[i] == ' ' || input[i] == '\t')
 				i++;
 			if (input[i] == '|' || input[i] == '\0')
 				return (1);
@@ -121,7 +125,7 @@ char	**lexique_pipe(const char *input)
 {
 	char	**cmd_tab;
 
-	if (check_pipe(input))
+	if (check_pipe(input, 0, 0))
 		return (NULL);
 	cmd_tab = split_pipe(input);
 	return (cmd_tab);

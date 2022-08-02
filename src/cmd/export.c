@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:47 by hvincent          #+#    #+#             */
-/*   Updated: 2022/08/01 20:07:30 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:14:44 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,47 +49,36 @@ char	*insert_quotes_exp(const char *s1, char *s2)
 	return (s2);
 }
 
-void	add_exp_line(t_cmd *cmd)
+void	export_arg(t_cmd *cmd, int i)
 {
-	int		i;
-	int		add;
-	char	*tmp;
-	char	*arg_cpy;
+	int	x;
 
-	i = -1;
-	tmp = (char *)ft_calloc(1, sizeof(char));
-	add = 1;
-	arg_cpy = ft_strjoin2("declare -x ",
-			insert_quotes_exp(cmd->arg[1], NULL), 0, 1);
-	while (cmd->data->export[++i])
-	{
-		if (arg_is_diff(arg_cpy, cmd->data->export[i]) == 2)
-			add = 0;
-		if (arg_is_diff(arg_cpy, cmd->data->export[i]))
-			tmp = ft_strjoin_2(tmp, cmd->data->export[i]);
-	}
-	if (add)
-		tmp = ft_strjoin_2(tmp, arg_cpy);
-	free(arg_cpy);
-	free_tab(cmd->data->export);
-	cmd->data->export = ft_split(tmp, '\n');
-	free(tmp);
+	x = -1;
+	if (check_if_equal(cmd->arg[i]) == 1)
+		add_env_line(cmd, i);
+	if (check_if_equal(cmd->arg[i]) != 2)
+		add_exp_line(cmd, i);
+	if (check_if_equal(cmd->arg[i]) == 2)
+		while (cmd->data->export[++x])
+			printf("export: %s\n", cmd->data->export[x]);
 }
 
-void	add_env_line(t_cmd *cmd)
+static int	check_arg(char *arg)
 {
-	int		i;
-	char	*tmp;
+	int	i;
 
-	i = -1;
-	tmp = (char *)ft_calloc(1, sizeof(char));
-	while (cmd->data->envp[++i])
-		if (do_not_replace(cmd->data->envp[i], cmd->arg[1]))
-		tmp = ft_strjoin_2(tmp, cmd->data->envp[i]);
-	tmp = ft_strjoin_2(tmp, cmd->arg[1]);
-	free_tab(cmd->data->envp);
-	cmd->data->envp = ft_split(tmp, '\n');
-	free(tmp);
+	i = 1;
+	if (ft_isalpha(arg[0]) == 0)
+		return (1);
+	while (arg[i])
+	{
+		if (arg[i] == ' ' || arg[i] == '=')
+			break ;
+		if (ft_isalnum(arg[i]) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void	export(t_cmd *cmd)
@@ -102,12 +91,17 @@ void	export(t_cmd *cmd)
 			printf("%s\n", cmd->data->export[i]);
 	else
 	{
-		if (check_if_equal(cmd->arg[1]) == 1)
-			add_env_line(cmd);
-		if (check_if_equal(cmd->arg[1]) != 2)
-			add_exp_line(cmd);
-		if (check_if_equal(cmd->arg[1]) == 2)
-			while (cmd->data->export[++i])
-				printf("export: %s\n", cmd->data->export[i]);
+		i = 1;
+		while (cmd->arg[i])
+		{
+			if (check_arg(cmd->arg[i]))
+			{
+				printf("Error : '%s': not a valid identifier\n", cmd->arg[i]);
+				break ;
+			}
+			else
+				export_arg(cmd, i);
+			i++;
+		}
 	}
 }

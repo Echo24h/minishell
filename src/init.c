@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:28:17 by gborne            #+#    #+#             */
-/*   Updated: 2022/07/30 20:29:03 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 02:00:47 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	init_env(t_data *data, char **envp)
 void	init(t_data *data, char **envp)
 {
 	init_env(data, envp);
-	data->pipeline_status = ft_itoa(0);
+	g_status = ft_itoa(0);
 	data->cmds = NULL;
 	data->first_cmd = NULL;
 }

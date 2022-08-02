@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:56 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 20:29:49 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 00:35:33 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*cd_pwd(int envp)
 	if (!envp)
 	{
 		tmpfree = ft_strdup("declare -x PWD=");
+		printf("%s\n", path);
 		if (path)
 			tmpfree = ft_strjoin(tmpfree, path);
 		tmp = insert_quotes_exp(tmpfree, NULL);
@@ -48,6 +49,8 @@ char	*cd_pwd(int envp)
 		if (path)
 			tmp = ft_strjoin(tmp, path);
 	}
+	if (path)
+		free(path);
 	return (tmp);
 }
 

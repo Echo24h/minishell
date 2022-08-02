@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 19:18:49 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:16:03 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	builtin(t_cmd *cmd)
 	else if (ft_strcmp(cmd->cmd, "cd") == 0)
 		cd(cmd);
 	else if (ft_strcmp(cmd->cmd, "exit") == 0)
-		ft_exit();
+		ft_exit(cmd);
 	else if (ft_strcmp(cmd->cmd, "unset") == 0)
 		unset(cmd);
 	return (0);

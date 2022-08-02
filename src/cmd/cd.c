@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 01:03:58 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 20:19:25 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:15:06 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	cd_suite(t_cmd *cmd, char *path)
 		chdir(path);
 		handle_exp_cd(cmd);
 		handle_env_cd(cmd);
-		free(dir);
+		closedir(dir);
 	}
 	else if (!access(path, R_OK))
 		printf("%s: Not a directory\n", path);

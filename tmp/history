@@ -1469,3 +1469,196 @@ env | grep HOME
 /bin/env | /bin/grep HOME
 /bin/env | /bin/grep USER
 /bin/env
+l
+ls
+l
+l
+l
+l
+l
+l
+l
+ls
+cd ..
+cat valgrind_readline.supp 
+l
+l
+l
+make
+l
+ls
+ls
+ls
+ls
+l
+ls
+make
+ls
+|
+"|"
+||
+cat | cat || ls
+cat | cat | ls |
+cat | cat | ls|
+cat | cat | ls 
+cat | cat | ls 
+cat | cat | ls 
+cat | cat | ls 
+cat | cat | ls 
+cat
+cat
+cat
+cat
+ccacascsa
+lll
+cat
+cat
+sdsa
+cat
+ls
+cat
+make
+cat
+make re
+cat
+lss
+ls
+ls
+cat
+ls
+ls
+      
+                                                     
+    |     
+exit
+ls
+cd ..
+cd ..
+cd ..
+cd ..
+./minishell
+cd ..
+ls
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+env -i
+export
+export TEST
+export
+export TEST=
+env
+export
+export TEST=20
+export
+export TEST*=20
+export
+export P1=10 P2=20 P3=* P*=40
+export | grep P
+make
+./m
+./minishell
+export P1=10 P2=20 P3=* P*=40
+ls
+ ls
+ls
+ls
+unset PATH
+ls
+/bin/ls
+ps
+/bin/ps
+cd ..
+cat
+$?
+cat
+$?
+ls
+cat
+cat | cat | ladas
+echo $?
+echo $?
+ls
+ls -l*
+echo $?
+echo $?
+echo $?
+echo $?
+ls -l*
+echo $?
+cat 
+cat 
+echo $?
+cat | cat
+echo $?
+cat | cat
+echo $?
+cat | cat
+echo $?
+cat | cat
+cat | cat
+echo $?
+ls
+ls
+ls -kdsadasda
+ls -kdsadasdac%
+ls -kdsa-
+\
+\
+echp $?
+echo $?
+exit
+exit
+lasdadasdasda
+echo $?
+ls
+l;ss
+ls
+lasdadasdasda
+echo $?
+ls
+ls
+./minishell
+exit 257
+./minishell
+exit 257
+echo $?
+./minishell
+exit 257
+echo $?
+./minishell
+exit -257
+echo $?
+./minishell
+exit -259
+echo $?
+./minishell
+exit 259
+echo $?
+exit 259
+exxit
+exit
+exit --n2685
+exit
+exit --n2685
+exit 245
+./minishell
+exit 355vf
+echo $?
+exit 355 jdlad
+echo $?
+ecit 256
+exit 256
+exit 245
+exit 256
+exit 245
+exit 245e edsds
+echo $?

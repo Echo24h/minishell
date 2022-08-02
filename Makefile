@@ -6,7 +6,7 @@
 #    By: gborne <gborne@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/27 14:38:38 by gborne            #+#    #+#              #
-#    Updated: 2022/08/01 18:27:09 by gborne           ###   ########.fr        #
+#    Updated: 2022/08/01 23:50:29 by gborne           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ TXT_BOLD = tput bold
 TXT_NORMAL = tput sgr0
 
 LIBFT = libft/libft.a
-READLINE = readline/libreadline.a
+#READLINE = readline/libreadline.a
+READLINE = readline/libreadline.a -I ~/.brew/opt/readline/include
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-LFLAGS = $(LIBFT) $(READLINE) -lreadline
+LFLAGS = $(LIBFT) $(READLINE) -lreadline -lncurses
 
 # -s --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=valgrind_readline.supp
 VALGRIND = valgrind --leak-check=full --suppressions=valgrind_readline.supp
@@ -37,7 +38,7 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 	@make -C libft
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LFLAGS)
-	@echo -e '\033[1mmake success\033[0m'
+	@echo "\033[1mmake success\033[0m"
 
 run: all
 	./$(NAME)
@@ -48,16 +49,16 @@ leaks: all
 clean:
 	@make clean -C libft
 	@rm -f src/*.o src/*/*.o
-	@echo -e '\033[1mclean success\033[0m'
+	@echo "\033[1mclean success\033[0m"
 
 fclean: clean
 	@make fclean -C libft
 	@rm -f minishell
-	@echo -e '\033[1mfclean success\033[0m'
+	@echo "\033[1mfclean success\033[0m"
 
 re: fclean all
 	@make re -C libft
-	@echo -e '\033[1mreboot success\033[0m'
+	@echo "\033[1mreboot success\033[0m"
 
 .PHONY: all init_libft run leaks clean fclean re
 

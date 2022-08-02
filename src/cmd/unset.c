@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:13:24 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 20:11:10 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:11:04 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,8 @@ int	unset(t_cmd *cmd)
 						cmd->arg[i_arg]));
 		cmd->data->export = unset_form(cmd->data->export, cmd->arg[i_arg],
 				"declare -x |=");
-		cmd->data->export = unset_form(cmd->data->export, cmd->arg[i_arg], NULL);
+		cmd->data->export = unset_form(cmd->data->export,
+				cmd->arg[i_arg], NULL);
 		cmd->data->envp = unset_form(cmd->data->envp, cmd->arg[i_arg], "|=");
 	}
 	return (0);

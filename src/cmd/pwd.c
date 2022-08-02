@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 00:31:56 by hvincent          #+#    #+#             */
-/*   Updated: 2022/07/30 20:40:04 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/02 00:36:04 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*pwd(int ret)
 		printf("%s\n", cwd);
 	else
 	{
-		path = cwd;
+		path = ft_strdup(cwd);
 		return (path);
 	}
 	return (NULL);

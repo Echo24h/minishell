@@ -6,7 +6,7 @@
 /*   By: gborne <gborne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:26:25 by gborne            #+#    #+#             */
-/*   Updated: 2022/08/01 20:06:36 by gborne           ###   ########.fr       */
+/*   Updated: 2022/08/01 23:46:47 by gborne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	bin(t_cmd *cmd)
 		}
 		write(1, "Error : ", 9);
 		write(1, cmd->cmd, ft_strlen(cmd->cmd));
-		write(1, " command not found\n", 21);
+		write(1, " command not found\n", 20);
 		free_tab(path_list);
 	}
 	exit(127);
