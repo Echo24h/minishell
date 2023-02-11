@@ -27,6 +27,6 @@ env
 exit
 ```
 Les autres builtins sont gérés par
-'''
+```
 execve()
-'''
+```
