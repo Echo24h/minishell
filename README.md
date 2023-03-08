@@ -1,22 +1,24 @@
-Utilisation:
-```
+## Utilisation:
+```Makefile
+# Compile le projet
 make
+# Ouvre Minishell
 ./minishell
 ```
 
-Les fonctionnalitées:
-```
-pipe: |
-single quote: '
-double quote: "
-variables d'environnement: $..
-statut de sortie pipeline: $?
+## Caractères / Signaux:
+```C
+| // Pipe
+' // Single quote
+" // Double quote
+$VAR // Variables d'environnement
+$?  // Sortie de pipeline
 ctrl-C
 ctrl-D
 ctrl-\
 ```
 
-Ré-implémentation des builtins suivants:
+## Ré-implémentation des builtins:
 ```
 echo [-n]
 cd
@@ -26,7 +28,8 @@ unset
 env
 exit
 ```
-Les autres builtins sont gérés par
-```
+## Autres builtins
+Pour une commande `ls` par exemple, le programme iras chercher dans les sous-dossiers accueillant des binaires, par examples `/bin` ect..
+```Makefile
 execve()
 ```
